@@ -8,6 +8,8 @@ The service registry is hosted and operated by NGDC.  To submit your service to 
 IOOS Service Registration
 The IOOS Catalog Registration Process on NOAA EDM Wiki:  https://geo-ide.noaa.gov/wiki/index.php?title=IOOS_Catalog_Registration_Process
 
+https://drive.google.com/file/d/0B0uvBG1lfvfMd1ZtTWR4UUY2Q2M/edit?usp=sharing
+
 What is the time it takes for the service to show up in the Regional WAFs, after it is approved? 
 A new service should show up in the IOOS test Web Accessible Folder (WAF) within 24 hours after it is approved. 
 Is this a manual process or automatic? 
