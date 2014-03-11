@@ -1,42 +1,47 @@
-registry
-========
+IOOS Service Registry at NGDC
+=============================
 
-The service registry provides the master list of U.S. IOOS data providers and IOOS data web services that provide data in U.S. IOOS DMAC-compliant means.  The registry is the official record of what is included in U.S. IOOS.  
+The Service Registry (aka the registry) provides the master list of data sets available via DMAC data access services.  The registry is the official record of what is included in U.S. IOOS.  The service registry is hosted and operated by NGDC and provides a web based discovery interface for IOOS data.    
 
-The service registry is hosted and operated by NGDC.  To submit your service to the registry, contact the IOOS Program at ioos.catalog@noaa.gov
+TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, Metrics and Tools, Geoportal)
 
-IOOS Service Registration
+# How do I contribute?
 The IOOS Catalog Registration Process on NOAA EDM Wiki:  https://geo-ide.noaa.gov/wiki/index.php?title=IOOS_Catalog_Registration_Process
 
 Registration Process Image from Anna Milan: https://drive.google.com/file/d/0B0uvBG1lfvfMd1ZtTWR4UUY2Q2M/edit?usp=sharing
 
 Service Registry FAQs: 
 
-How is a service submitted to the registry?  An email with the service url, point of contact and organization should be sent to ioos.catalog@noaa.gov
+* How is a service submitted to the registry?  
+   * An email with the service url (or WAF location), point of contact and organization should be sent to ioos.catalog@noaa.gov
 
-How long does it take for a service to show up in a WAF after it is approved?
-A new service should show up within 24 hours after it is approved.
+* How long does it take for a service to show up in a WAF after it is approved?
+   * A new service should show up within 24 hours after it is approved.
 
-Is the harvesting process manual or automatic?
-Harvesting runs automatically every night. 
+* Is the harvesting process manual or automatic?
+   * Harvesting runs automatically every night. 
 
-When does tne metadata harvest take place?
-The metadata should be in the test WAF by 0715 on day 2.  
+* When does tne metadata harvest take place?
+   * The metadata should be in the test WAF by 0715 on day 2.  DEFINE WHAT THIS MEANS.
+   * 
+* What is the relationship between the Service Registry and the [IOOS Catalog](http://catalog.ioos.us)? 
+   * A web based catalog of IOOS services and datasets, available at  ....
 
-The 
-
-
-
-
-
-
-
+* What is the relationship between the IOOS Service Registry and data.gov, GEOSS, and other national or international catalog efforts?
+* What is the difference between a data set and data service?
+   * TODO: Ask for input from the group.
 
 
-A web based catalog of IOOS services and datasets, available at http://catalog.ioos.us
 
-The IOOS Catalog registration process is described here: https://geo-ide.noaa.gov/wiki/index.php?title=IOOS_Catalog_Registration_Process
 
+
+
+
+
+
+
+
+TODO: Verify that the list below is exactly describing whichever figure we choose to insert above.
 Here's the sequence of events to get data loaded in to the catalog:
 
 Register new data service URL at the NGDC Collection Source table - Day 1, manual
@@ -51,7 +56,7 @@ After a service URL is approved, steps 4 and 5 occur daily at the same time.
 
 
 
-Old Material
+# Old Material
 
 IOOS Catalog Registration Process from EDM Wiki
 
