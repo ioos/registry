@@ -7,16 +7,27 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 TODO: Include a section on the Geoportal including examples of querying the server that are listed here. https://geo-ide.noaa.gov/wiki/index.php?title=ESRI_Geoportal#IOOS_WAFs
 TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.  Currently on the wiki page above AND on the github.com/ioos/catalog repo.  Pick one as master. https://github.com/ioos/catalog/blob/master/uuid.csv
 
-# How do I contribute?
+# Service Registry FAQs
 The IOOS Catalog Registration Process on NOAA EDM Wiki:  https://geo-ide.noaa.gov/wiki/index.php?title=IOOS_Catalog_Registration_Process
 
 Registration Process Image from Anna Milan: https://drive.google.com/file/d/0B0uvBG1lfvfMd1ZtTWR4UUY2Q2M/edit?usp=sharing
 
-Service Registry FAQs: 
 
-* How is a service submitted to the registry?  
+
+*  How do I contribute my data? -OR- How is a service submitted to the registry?  
    * An email with the service url (or WAF location), point of contact and organization should be sent to ioos.catalog@noaa.gov
    * TODO: consider including an additional pathway for registering new data using the Issues in this repo.  Is this feasible today?
+* What happens after I submit my service URL?
+   * TODO: Verify that the list below is exactly describing whichever figure we choose to insert above.
+
+1. Register new data service URL at the NGDC Collection Source table - Day 1, manual
+2. Test metadata harvest happens - by 7:15 am on Day 2, automatic
+3. Approval of new data service check status in EMMA - Day 2, manual
+4. WAF is populated with new ISO record - Day 3 by 7:15 am, automatic
+5. Geoportal harvests records from WAF - Day 3 by 9 am, automatic
+6. IOOS Catalog queries Geoportal for all IOOS service URLs -?
+7. IOOS Catalog harvests from individual services and generates dataset records. - ?
+8. After a service URL is approved, steps 4 and 5 occur daily at the same time.
 
 * How long does it take for a service to show up in a WAF after it is approved?
    * A new service should show up within 24 hours after it is approved.
@@ -43,18 +54,6 @@ Service Registry FAQs:
 
 
 
-
-TODO: Verify that the list below is exactly describing whichever figure we choose to insert above.
-Here's the sequence of events to get data loaded in to the catalog:
-
-Register new data service URL at the NGDC Collection Source table - Day 1, manual
-Test metadata harvest happens - by 7:15 am on Day 2, automatic
-Approval of new data service check status in EMMA - Day 2, manual
-WAF is populated with new ISO record - Day 3 by 7:15 am, automatic
-Geoportal harvests records from WAF - Day 3 by 9 am, automatic
-IOOS Catalog queries Geoportal for all IOOS service URLs -?
-IOOS Catalog harvests from individual services and generates dataset records. - ?
-After a service URL is approved, steps 4 and 5 occur daily at the same time.
 
 
 
