@@ -4,6 +4,8 @@ IOOS Service Registry at NGDC
 The Service Registry (aka the registry) provides the master list of data sets available via DMAC data access services.  The registry is the official record of what is included in U.S. IOOS.  The service registry is hosted and operated by NGDC and provides a web based discovery interface for IOOS data.    
 
 TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, Metrics and Tools, Geoportal)
+TODO: Include a section on the Geoportal including examples of querying the server that are listed here. https://geo-ide.noaa.gov/wiki/index.php?title=ESRI_Geoportal#IOOS_WAFs
+TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.  Currently on the wiki page above AND on the github.com/ioos/catalog repo.  Pick one as master. https://github.com/ioos/catalog/blob/master/uuid.csv
 
 # How do I contribute?
 The IOOS Catalog Registration Process on NOAA EDM Wiki:  https://geo-ide.noaa.gov/wiki/index.php?title=IOOS_Catalog_Registration_Process
@@ -14,6 +16,7 @@ Service Registry FAQs:
 
 * How is a service submitted to the registry?  
    * An email with the service url (or WAF location), point of contact and organization should be sent to ioos.catalog@noaa.gov
+   * TODO: consider including an additional pathway for registering new data using the Issues in this repo.  Is this feasible today?
 
 * How long does it take for a service to show up in a WAF after it is approved?
    * A new service should show up within 24 hours after it is approved.
