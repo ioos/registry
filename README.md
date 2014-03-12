@@ -16,7 +16,8 @@ Registration Process Image from Anna Milan: https://drive.google.com/file/d/0B0u
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
 
 
-![More registration process](https://raw.github.com/ioos/registry/master/doc/images/IoosWorkFlow12172013.png)
+![More registration process](https://github.com/ioos/registry/blob/master/doc/images/IoosWorkFlow20140312.png)
+
 
 *  How do I contribute my data? -OR- How is a service submitted to the registry?  
    * An email with the service url (or WAF location), point of contact and organization should be sent to ioos.catalog@noaa.gov
