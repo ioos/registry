@@ -11,7 +11,8 @@ TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.
   
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
 
-![Registeration Process Workflow](https://raw.github.com/ioos/registry/master/doc/images/IoosWorkFlow20140312_2.png)
+![Registeration Process Workflow](https://raw.github.com/ioos/registry/master/doc/images/IoosWorkFlow20140312.png)
+
 
 Path for registering service
 =
