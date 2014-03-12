@@ -24,8 +24,18 @@ Registration Process Image from Anna Milan: https://drive.google.com/file/d/0B0u
 * What happens after I submit my service URL?
    * TODO: Verify that the list below is exactly describing whichever figure we choose to insert above.
 
-1. Register new data service URL at the NGDC Collection Source table - Day 1, manual
-2. Test metadata harvest happens - by 7:15 am on Day 2, automatic
+1. Submit new data service via email to IOOS.Catalog@noaa.gov and include the service URL, point of contact and service affilitation.
+2. The servicThe status of the service will be manually changed from "submitted" to "approved".e URL is manually added to the Service Registry [collection source table] (https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
+3. The "submitted" service metadata will be automatically harvested into a [test Web Accessible Folder (WAF)} (http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/).  
+4. If successfully harvested, the test WAF is populated with an ISO metadata record by 0715.  The WAF is manually checked to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table.  
+5. The production WAF in EMMA is automatically populated on day 3 (day after the status has been changed to "approved") by 0715.  
+6. The NGDC Geoportal automatically harvests records from the WAF by 0900.  
+5. 
+5. The 
+5. 
+6. The service
+4. 
+5. by Test metadata harvest happens - by 7:15 am on Day 2, automatic
 3. Approval of new data service check status in EMMA - Day 2, manual
 4. WAF is populated with new ISO record - Day 3 by 7:15 am, automatic
 5. Geoportal harvests records from WAF - Day 3 by 9 am, automatic
