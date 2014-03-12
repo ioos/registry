@@ -5,18 +5,20 @@ The Service Registry (aka the registry) provides the master list of data sets av
 
 TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, Metrics and Tools, Geoportal)
 TODO: Include a section on the Geoportal including examples of querying the server that are listed here. https://geo-ide.noaa.gov/wiki/index.php?title=ESRI_Geoportal#IOOS_WAFs
+
+
+
+
+
+
+
+
 TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.  Currently on the wiki page above AND on the github.com/ioos/catalog repo.  Pick one as master. https://github.com/ioos/catalog/blob/master/uuid.csv
 
 # Service Registry FAQs
 The IOOS Catalog Registration Process on NOAA EDM Wiki:  https://geo-ide.noaa.gov/wiki/index.php?title=IOOS_Catalog_Registration_Process
 
-Registration Process Image from Anna Milan: https://drive.google.com/file/d/0B0uvBG1lfvfMd1ZtTWR4UUY2Q2M/edit?usp=sharing
-
-
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
-
-
-![More registration process](https://github.com/ioos/registry/blob/master/doc/images/IoosWorkFlow20140312.png)
 
 
 *  How do I contribute my data? -OR- How is a service submitted to the registry?  
@@ -29,20 +31,60 @@ Registration Process Image from Anna Milan: https://drive.google.com/file/d/0B0u
 2. The servicThe status of the service will be manually changed from "submitted" to "approved".e URL is manually added to the Service Registry [collection source table] (https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
 3. The "submitted" service metadata will be automatically harvested into a [test Web Accessible Folder (WAF)} (http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/).  
 4. If successfully harvested, the test WAF is populated with an ISO metadata record by 0715.  The WAF is manually checked to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table.  
-5. The production WAF in EMMA is automatically populated on day 3 (day after the status has been changed to "approved") by 0715.  
-6. The NGDC Geoportal automatically harvests records from the WAF by 0900.  
-5. 
-5. The 
-5. 
-6. The service
-4. 
-5. by Test metadata harvest happens - by 7:15 am on Day 2, automatic
-3. Approval of new data service check status in EMMA - Day 2, manual
-4. WAF is populated with new ISO record - Day 3 by 7:15 am, automatic
-5. Geoportal harvests records from WAF - Day 3 by 9 am, automatic
-6. IOOS Catalog queries Geoportal for all IOOS service URLs -?
-7. IOOS Catalog harvests from individual services and generates dataset records. - ?
-8. After a service URL is approved, steps 4 and 5 occur daily at the same time.
+5. The production WAF in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
+6. The NGDC Geoportal automatically harvests records from the WAF by 0900. 
+7. The IOOS Catalog will automatically harvest records from the NGDC Geoportal every 8 hours.  
+
+ESRI Geoportal
+
+TODO: Include a section on the Geoportal including examples of querying the server that are listed here. https://geo-ide.noaa.gov/wiki/index.php?title=ESRI_Geoportal#IOOS_WAFs
+
+Date Search Example: Search within the PacIOOS WAF for records with start date 2009-02-01 to end date 2012-02-01 with JSON response: PacIOOS DateSearchExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&searchText=startDate:[1800-01-01 TO 2012-02-01] AND endDate:[2009-02-01 TO 2100-01-01] AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=10&orderBy=relevance&maxSearchTimeMilliSec=10000&f=pjson
+
+Keyword Example: Search within the PacIOOS WAF for keywords 'sea_water_salinity' with JSON response: PacIOOS KeywordExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&searchText=keywords: sea_water_salinity AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=pjson
+
+Geographic Search Example: Search within the PacIOOS WAF for metadata records within -164.9246,16.6012,-149.4899,25.3959 with JSON response: PacIOOS GeoExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&searchText=sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&spatialRel=esriSpatialRelWithin&bbox=-164.9246,16.6012,-149.4899,25.3959&maxSearchTimeMilliSec=10000&f=pjson
+
+Multi-Criteria Example: Search within the PacIOOS WAF for metadata records with all of the above with JSON response: PacIOOS MultiExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=keywords: sea_water_salinity AND endDate:[2009-02-01 TO 2100-01-01] AND startDate:[1800-01-01 TO 2012-02-01] AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&spatialRel=esriSpatialRelWithin&bbox=-164.9246,16.6012,-149.4899,25.3959&maxSearchTimeMilliSec=10000&f=pjson
+
+WMS Example: Search within the PacIOOS WAF for metadata records with a WMS service endpoint with GeoRSS response: PacIOOS WMSExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=wms.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=georss
+
+WCS Example: Search within the PacIOOS WAF for metadata records with a WCS service endpoint with html response: PacIOOS WCSExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=wcs.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html
+
+SOS Example: Search within the PacIOOS WAF for metadata records with an SOS service endpoint with html response: PacIOOS SOSExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=sos.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html
+
+OPeNDAP Example: Search within the PacIOOS WAF for metadata records with a OpenDAP service endpoint with html response: PacIOOS OPeNDAPExample Link
+Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=odp.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html
+
+[Master UUID List] (https://github.com/ioos/registry/blob/master/uuid.csv)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * How long does it take for a service to show up in a WAF after it is approved?
    * A new service should show up within 24 hours after it is approved.
