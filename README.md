@@ -13,11 +13,8 @@ TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.
 
 ![Registeration Process Workflow](https://raw.github.com/ioos/registry/master/doc/images/IoosWorkFlow20140312_2.png)
 
-*  How do I contribute my data? -OR- How is a service submitted to the registry?  
-   * An email with the service url (or WAF location), point of contact and organization should be sent to ioos.catalog@noaa.gov
-   * TODO: consider including an additional pathway for registering new data using the Issues in this repo.  Is this feasible today?
-
 Path for registering service
+=
 
 1. Submit an email to ioos.Catalog@noaa.gov and include the service URL (or WAF location), point of contact and service affilitation.
 2. The servicThe status of the service will be manually changed from "submitted" to "approved".e URL is manually added to the Service Registry [collection source table] (https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
@@ -26,6 +23,8 @@ Path for registering service
 5. The [production WAF}(http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
 6. The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF by 0900. 
 7. The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours.  
+
+*  Other addtional pathways to consider for registering new data using the issues in this repository.  Is this feasible?
 
 ESRI Geoportal
 
