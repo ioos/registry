@@ -14,8 +14,8 @@ TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.
 ![Registeration Process Workflow](https://raw.github.com/ioos/registry/master/doc/images/IoosWorkFlow20140312.png)
 
 
-Path for registering service
-=
+IOOS Service Registration Pathway
+=================================
 
 1. Submit an email to ioos.Catalog@noaa.gov and include the service URL (or WAF location), point of contact and service affilitation.
 2. The servicThe status of the service will be manually changed from "submitted" to "approved".e URL is manually added to the Service Registry [collection source table] (https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
@@ -28,8 +28,6 @@ Path for registering service
 *  Other addtional pathways to consider for registering new data using the issues in this repository.  Is this feasible?
 
 ESRI Geoportal
-
-The [Master uuid document](https://github.com/ioos/registry/blob/master/uuid.csv)
 
 IOOS WAF Search Examples: 
 
@@ -56,6 +54,9 @@ Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&rids=local&
 
 OPeNDAP Example: Search within the PacIOOS WAF for metadata records with a OpenDAP service endpoint with html response: PacIOOS OPeNDAPExample Link
 Decoded Parameters: rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=odp.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html
+
+
+The [Master uuid document](https://github.com/ioos/registry/blob/master/uuid.csv)
 
 GeoPortal CSW Documentation
 =
@@ -179,26 +180,6 @@ ISO Date Modified Search
 </csw:Constraint> 
 </csw:Query> 
 </csw:GetRecords> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 * How long does it take for a service to show up in a WAF after it is approved?
    * A new service should show up within 24 hours after it is approved.
