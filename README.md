@@ -9,13 +9,11 @@ TODO: Include a section on the Geoportal including examples of querying the serv
 TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.  Currently on the wiki page above AND on the github.com/ioos/catalog repo.  Pick one as master. https://github.com/ioos/catalog/blob/master/uuid.csv
 
   
-![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
-
 ![Registeration Process Workflow](https://raw.github.com/ioos/registry/master/doc/images/IoosWorkFlow20140312.png)
+figure 1. IOOS service registration steps
 
-
-IOOS Service Registration Pathway
-=================================
+Description of IOOS service registration 
+========================================
 
 1. Submit an email to ioos.Catalog@noaa.gov and include the service URL (or WAF location), point of contact and service affilitation.
 2. The servicThe status of the service will be manually changed from "submitted" to "approved".e URL is manually added to the Service Registry [collection source table] (https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
@@ -23,7 +21,10 @@ IOOS Service Registration Pathway
 4. If successfully harvested, the test WAF is populated with an ISO metadata record by 0715.  The WAF is manually checked to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table.  
 5. The [production WAF}(http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
 6. The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF by 0900. 
-7. The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours.  
+7. The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
+
+![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
+figure 2. 
 
 *  Other addtional pathways to consider for registering new data using the issues in this repository.  Is this feasible?
 
