@@ -7,7 +7,7 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 TODO: Include a section on the Geoportal including examples of querying the server that are listed here. https://geo-ide.noaa.gov/wiki/index.php?title=ESRI_Geoportal#IOOS_WAFs
 
 TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.  Currently on the wiki page above AND on the github.com/ioos/catalog repo.  Pick one as master. https://github.com/ioos/catalog/blob/master/uuid.csv
-  * [Master document uuid list](https://github.com/ioos/registry/blob/master/uuid.csv)
+
   
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
 
@@ -28,6 +28,10 @@ IOOS Service Registration Pathway
 *  Other addtional pathways to consider for registering new data using the issues in this repository.  Is this feasible?
 
 ESRI Geoportal
+=
+
+[Master UUID list](https://github.com/ioos/registry/blob/master/uuid.csv)
+=
 
 IOOS WAF Search Examples: 
 
