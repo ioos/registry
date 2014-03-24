@@ -9,7 +9,11 @@ In this webinar, Anna covered the processes that takes place behind the scenes w
 IOOS Service Registry at NGDC
 =============================
 
-The Service Registry (aka the registry) provides the master list of data sets available via DMAC data access services.  The registry is the official record of what is included in U.S. IOOS.  The service registry is hosted and operated by NGDC and provides a web based discovery interface for IOOS data.    
+The Service Registry (aka the registry) provides the master list of data sets available via DMAC data access services.  The registry is the official record of what is included in U.S. IOOS.  It is hosted and operated by NGDC and provides a web based discovery interface for IOOS data. 
+
+Functionally the service registry comprises the metadata harvesting process, the WAF generation and maintenance, and the publication of metadata records into the NGDC Geoportal. The registry work is carried out at NGDC. The Geoportal CSW interface is the main interface to the metadata. I think the purpose of this repo is to primarily serve as the documentation home and as the issue tracker. The issue tracker should be used for all metadata and harvesting related issues.
+
+The catalog repository serves as the software repository for all code supporting the generation of the catalog.ioos.us web site. This web site is intended to summarize the data that is published on the services visible in the Servie Registry. The interface between the registry and the catalog is the CSW interface to the NGDC geoportal. The repository and issue tracker for the catalog should probably be limited to issues with the code and not procedural issues related to harvesting RA or other partner metadata. Also, let's move the uuid.csv file from the catalog repository to the regsitry repository.
 
 TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, Metrics and Tools, Geoportal)  
 
