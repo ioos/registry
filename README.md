@@ -55,6 +55,11 @@ figure 2.
 ESRI Geoportal
 =
 
+How to find data through common, simple searches: 
+@amilan17: Thanks. Good to know both how to expose the RA name/acronym to common, simple searches, and to see that the GeoPortal Browse section has provider/collection browsing. @robragsdale, both pieces of information would be helpful on the registry documentation.
+
+
+
 [Master UUID list](https://github.com/ioos/registry/blob/master/uuid.csv)
 =
 
