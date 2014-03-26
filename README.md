@@ -22,7 +22,8 @@ TODO: Include a section on the Geoportal including examples of querying the serv
 TODO: Decide where the master list of Geoportal collection UUIDs will be hosted.  Currently on the wiki page above AND on the github.com/ioos/catalog repo.  Pick one as master. https://github.com/ioos/catalog/blob/master/uuid.csv
 
   
-![Registeration Process Workflow](https://raw.github.com/ioos/registry/master/doc/images/IoosWorkFlow20140312.png)
+![Registeration Process Workflow](https://raw.githubusercontent.com/ioos/registry/master/doc/images/IoosWorkFlow12172013(8).png)
+
 figure 1. IOOS service registration steps
 
 ###How do I submit datasets for harvesting?
