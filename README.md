@@ -43,7 +43,7 @@ Send a message to  ioos.catalog@noaa.gov including these 3 pieces of information
 * The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
 * The "submitted" service metadata will be automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/). This harvest begins each evening around 1930 MT. 
 * If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT.  The WAF is manually checked to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table.  WHEN IS THE WAF MANUALLY CHECKED?  WHAT IS SUCCESSFUL?
-* The [production WAF}(http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
+* The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
 * The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF by 0900. 
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
 
