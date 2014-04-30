@@ -54,8 +54,10 @@ figure 2.
 *  Other addtional pathways to consider for registering new data using the issues in this repository.  Is this feasible?
 
 ### How do I check the results?
-* Review metadata and assessments of metadata in EMMA - http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS
-* Search or Browse metadata in Geoportal - http://www.ngdc.noaa.gov/geoportal
+* Review metadata and assessments of metadata in EMMA 
+  * http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS
+* Search or Browse metadata in Geoportal
+*   http://www.ngdc.noaa.gov/geoportal
 * Search for metadata in IOOS Catalog
 
 ### How do I remove previously harvested metadata?
