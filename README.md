@@ -33,8 +33,9 @@ Send a message to  ioos.catalog@noaa.gov including these 3 pieces of information
 1. Service URL or WAF
    * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/
    * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by CatalogRed are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml
-   * SOS: 
-   * ERDDAP:
+   * SOS: A single getCapabilities file. Example: http://sos.maracoos.org/stable/sos/wflow1127-agg.ncml
+   * ERDDAP: The list of ISO records provided by ERDDAP. Example: http://erddap.secoora.org/erddap/metadata/iso19115/xml/
+   * WMS: A single getCapabilities file. Example: http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&version=1.3.0&request=GetCapabilities
 2. Point of contact: The person responsible for maintaining the service, or that person's supervisor
 3. Affilitation: Regional Association (NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
@@ -42,9 +43,9 @@ Send a message to  ioos.catalog@noaa.gov including these 3 pieces of information
 ### What happens then?
 * The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
 * The "submitted" service metadata will be automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/). This harvest begins each evening around 1930 MT. 
-* If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT.  The WAF is manually checked to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table.  WHEN IS THE WAF MANUALLY CHECKED?  WHAT IS SUCCESSFUL?
+* If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT.  The WAF is manually checked, the next day, to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table. Harvest is considered 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation. 
 * The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
-* The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF by 0900. 
+* The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
 
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
