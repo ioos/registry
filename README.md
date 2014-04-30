@@ -56,12 +56,14 @@ figure 2.
 ### How do I remove previously harvested metadata?
 The registry augments today's harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable. 
 
-1. If the conten in the services is updated, but the service should still be registered then: 
-  * send an email to ioos.catalog@noaa.gov requesting a 'clean out' of a particular service or WAF. The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
+1. If the content of the services has changed, but the service should still be registered then: 
+  * send an email to ioos.catalog@noaa.gov requesting a 'clean out' of a particular service or WAF. 
+  * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
   
 2. If the service is out date and should no longer be registered with IOOS then: 
   * send an email to ioos.catalog@noaa.gov requesting that the service be removed. 
-  * Rob will change the status of the service to 'For Removal' and the administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
+  * Rob will change the status of the service to 'For Removal' 
+  * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
   * The admin at NGDC will then change the status of the servic in the Collection Source table to 'Removed'. 
 
 
