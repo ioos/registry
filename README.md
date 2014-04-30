@@ -63,7 +63,7 @@ figure 2.
 ### How do I remove previously harvested metadata?
 The registry augments today's harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable. 
 
-1. If the content of the services has changed, but the service should still be registered then: 
+1. If the content of the service has changed, but the service should still be registered then: 
   * send an email to ioos.catalog@noaa.gov requesting a 'clean out' of a particular service or WAF. 
   * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
   
@@ -72,6 +72,13 @@ The registry augments today's harvest with all previous harvests and sometimes t
   * Rob will change the status of the service to 'For Removal' 
   * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
   * The admin at NGDC will then change the status of the servic in the Collection Source table to 'Removed'. 
+
+
+### Common reasons for failure of harvest 
+1. XML is not well formed
+2. ISO metadata does not pass 19139 schema validation
+3. Metadata records are not harvested from service into registry
+4. 
 
 
 ESRI Geoportal
