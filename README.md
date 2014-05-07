@@ -257,7 +257,7 @@ outputSchema="http://www.isotc211.org/2005/gmd" startPosition="1" maxRecords="10
 </csw:Constraint> 
 </csw:Query>
 </csw:GetRecords>
-```xml
+```
 
 ### ISO Date Modified Search
 
