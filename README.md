@@ -68,7 +68,15 @@ The registry augments today's harvest with all previous harvests and sometimes t
   * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
   * The admin at NGDC will then change the status of the servic in the Collection Source table to 'Removed'. 
 
+How to resolve catalogRefs?
+If a THREDDS endpoint contains catalogRefs, it cannot be harvested by the Registry.  An example of an endpoint that contains catalogRefs is: 
+ http://opendap.co-ops.nos.noaa.gov/thredds/dbofs_agg.xml
+ 
+The datasets have to be aggregated at a lower level in the xml file to be harvested, as in the example:
 
+http://opendap.co-ops.nos.noaa.gov/thredds/catalog/DBOFS/fmrc/catalog.xml
+
+This can be resolved by...
 
 
 # ESRI Geoportal
