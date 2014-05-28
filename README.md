@@ -68,11 +68,21 @@ The registry augments today's harvest with all previous harvests and sometimes t
   * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
   * The admin at NGDC will then change the status of the servic in the Collection Source table to 'Removed'. 
 
-## How to resolve catalogRefs?
-If a THREDDS endpoint contains catalogRefs, it cannot be harvested by the Registry.  The datasets have to be aggregated at a lower level in the xml file to be harvested, as in the example http://opendap.co-ops.nos.noaa.gov/thredds/catalog/DBOFS/fmrc/catalog.xml.  In contrast to this example that does contain catalogRefs http://opendap.co-ops.nos.noaa.gov/thredds/dbofs_agg.xml.   
+## What if my THREDDS catalogs contain `catalogRef` elements?
+In THREDDS catalogs it is common to use `catalogRef` elements to reference other catalogs, especially in the [top level catalog](http://gis.stackexchange.com/questions/70919/setting-up-thredds-catalogs-for-ocean-model-data).  The NGDC crawler is currently not following `catalogRef` links, however.  So if you had a top level catalog that looked like this:
+```
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    name="THREDDS Top Catalog, points to other THREDDS catalogs" version="1.0.1">
 
-Rich Signell helped CariCOOS aggregate a catalog as shown here https://github.com/rsignell-usgs/xml/commit/829cda2381bb904a25578fc1743168bf794b71ff from his Github page https://github.com/rsignell-usgs.  
+    <dataset name="NCSU MEAS THREDDS catalogs">
+        <catalogRef xlink:href="gomtox_catalog.xml" xlink:title="GOMTOX (Gulf of Maine) Ocean Model" name=""/>
+        <catalogRef xlink:href="sabgom_catalog.xml" xlink:title="SABGOM (South Atlantic Bight and Gulf of Mexico) Ocean Model" name=""/>
+    </dataset>
 
+</catalog>
+```
+and you wanted all the content to be harvested, you would not submit the top level catalog (which would harvest nothing). Instead you would submit the two child catalogs for harvesting. 
 
 
 # ESRI Geoportal
