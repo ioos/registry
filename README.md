@@ -76,8 +76,7 @@ The datasets have to be aggregated at a lower level in the xml file to be harves
 
 http://opendap.co-ops.nos.noaa.gov/thredds/catalog/DBOFS/fmrc/catalog.xml
 
-This can be resolved by...
-
+This example of how to aggregate a catalog is borrowed from Rich Signell's [Github page] (https://github.com/rsignell-usgs).  The example shows what Rich did to aggregate a CariCoos catalog https://github.com/rsignell-usgs/xml/commit/829cda2381bb904a25578fc1743168bf794b71ff.     
 
 # ESRI Geoportal
 
