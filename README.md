@@ -69,14 +69,11 @@ The registry augments today's harvest with all previous harvests and sometimes t
   * The admin at NGDC will then change the status of the servic in the Collection Source table to 'Removed'. 
 
 ## How to resolve catalogRefs?
-If a THREDDS endpoint contains catalogRefs, it cannot be harvested by the Registry.  An example of an endpoint that contains catalogRefs is: 
- http://opendap.co-ops.nos.noaa.gov/thredds/dbofs_agg.xml
- 
-The datasets have to be aggregated at a lower level in the xml file to be harvested, as in the example:
+If a THREDDS endpoint contains catalogRefs, it cannot be harvested by the Registry.  The datasets have to be aggregated at a lower level in the xml file to be harvested, as in the example http://opendap.co-ops.nos.noaa.gov/thredds/catalog/DBOFS/fmrc/catalog.xml.  In contrast to this example that does contain catalogRefs http://opendap.co-ops.nos.noaa.gov/thredds/dbofs_agg.xml.   
 
-http://opendap.co-ops.nos.noaa.gov/thredds/catalog/DBOFS/fmrc/catalog.xml
+Rich Signell helped CariCOOS aggregate a catalog as shown here https://github.com/rsignell-usgs/xml/commit/829cda2381bb904a25578fc1743168bf794b71ff from his Github page https://github.com/rsignell-usgs.  
 
-This example of how to aggregate a catalog is borrowed from Rich Signell's [Github page] (https://github.com/rsignell-usgs).  The example shows what Rich did to aggregate a CariCoos catalog https://github.com/rsignell-usgs/xml/commit/829cda2381bb904a25578fc1743168bf794b71ff.     
+
 
 # ESRI Geoportal
 
