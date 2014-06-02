@@ -41,9 +41,6 @@ NOTE: For some time the registration process has been initiated by an email to  
 * The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
 
-![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png)
-figure 2. 
-
 *  Other addtional pathways to consider for registering new data using the issues in this repository.  Is this feasible?
   * Service queries to other catalogs e.g. CSW or OAI-PMH call to NODC geoportal for GHRSST.
 
