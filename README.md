@@ -18,9 +18,8 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 
 ## How do I submit metadata to the Service Registry?
   
-![Registration Process Workflow](https://raw.githubusercontent.com/ioos/registry/master/doc/images/IoosWorkFlow12172013(8).png)
-
-**Figure 1.** *IOOS service metadata registration steps.*
+![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png) 
+**Figure 1.** IOOS service metadata registration steps 
 
 NOTE: For some time the registration process has been initiated by an email to  ioos.catalog@noaa.gov including the following 3 pieces of information.  Currently, we are experimenting with using this repository as the primary record of requests for registration.  For now, please log an issue on the issue tracker AND send an email to ioos.catalog@noaa.gov.
 
