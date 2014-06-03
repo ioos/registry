@@ -21,7 +21,7 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png) 
 **Figure 1.** IOOS service metadata registration steps 
 
-Register Service endpoints in [Collection Source Table] (https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid):  The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 1) Service URL 3) Service Point of Contact and 3) Service Organization.
+The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 1) Service URL 3) Service Point of Contact and 3) Service Organization.
 
 1. Accepted Registry Services (Service URL or metadata collection in a Web Accessible Folder (WAF))
    * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/
@@ -32,17 +32,14 @@ Register Service endpoints in [Collection Source Table] (https://www.ngdc.noaa.g
 2. Point of contact: The person responsible for maintaining the service, or that person's supervisor
 3. Organization: Regional Association (NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
-
 ## What happens then?
-* The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted"  
+* The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted".    
 * The "submitted" service metadata will be automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/). This harvest begins each evening around 1930 MT. 
 * If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT.  The WAF is manually checked, the next day, to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table. Harvest is considered 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation. 
 * The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
 * The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
-
-*  Other addtional pathways to consider for registering new data using the issues in this repository.  Is this feasible?
-  * Service queries to other catalogs e.g. CSW or OAI-PMH call to NODC geoportal for GHRSST.
+* Other addtional pathways to consider for registering new data using the issues in this repository: Service queries to other catalogs e.g. CSW or OAI-PMH call to NODC geoportal for GHRSST.
 
 ## How do I check the results?
 * Review metadata and assessments of metadata in EMMA 
@@ -50,6 +47,7 @@ Register Service endpoints in [Collection Source Table] (https://www.ngdc.noaa.g
 * Search or Browse metadata in Geoportal
   * http://www.ngdc.noaa.gov/geoportal
 * Search for metadata in IOOS Catalog
+  * http://catalog.ioos.us/   
 
 ## How do I remove previously harvested metadata?
 The registry augments today's harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable. 
