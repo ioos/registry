@@ -21,9 +21,11 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png) 
 **Figure 1.** IOOS service metadata registration steps 
 
-NOTE: For some time the registration process has been initiated by an email to  ioos.catalog@noaa.gov including the following 3 pieces of information.  Currently, we are experimenting with using this repository as the primary record of requests for registration.  For now, please log an issue on the issue tracker AND send an email to ioos.catalog@noaa.gov.
+Register Service endpoints in [Collection Source Table] (https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid):  The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 1) Service URL 3) Service Point of Contact and 3) Service Organization.
 
-1. Service URL or metadata collection in a Web Accessible Folder (WAF)
+Accepted Registry Service (Service URL or metadata collection in a Web Accessible Folder (WAF))
+
+
    * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/
    * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by `CatalogRef` are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml
    * SOS: A single getCapabilities request. Example: http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
