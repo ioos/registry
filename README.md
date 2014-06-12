@@ -21,17 +21,20 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png) 
 **Figure 1.** IOOS service metadata registration steps 
 
-The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 1) Service URL 3) Service Point of Contact and 3) Service Organization.
+The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 
+* Service URL: 
+  * http://sos.aoos.org/sos/sos/kvp?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
+  * http://sos.maracoos.org/stable/agg_catalogs/weatherflow_agg_catalog.xml
+* Service Point of Contact: The person responsible for maintaining the service or that person's supervisor 
+* Service Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS)
 
-#### 1. Accepted Registry Services (Service URL or metadata collection in a Web Accessible Folder (WAF))
+#### Register Service Endpoint in Collection Source Table
+* Accepted Registry Services (Service URL or metadata collection in a Web Accessible Folder (WAF))
    * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by `CatalogRef` are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml
    * WMS: A single getCapabilities file. Example: http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&version=1.3.0&request=GetCapabilities
    * ERDDAP: The list of ISO records provided by ERDDAP. Example: http://erddap.secoora.org/erddap/metadata/iso19115/xml/
    * SOS: A single getCapabilities request. Example: http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
    * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/
-
-#### 2.  Point of contact: The person responsible for maintaining the service, or that person's supervisor
-#### 3.  Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
 ### What happens after submitting metadata to the Service Registry?
 * The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid) and designated as "submitted". 
@@ -54,21 +57,21 @@ The registration process is initiated by logging a request on the [IOOS Registry
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
 
 ### How do I check to see if my metadata has been registered?
-1.  Review metadata and assessments of metadata in EMMA 
+* Review metadata and assessments of metadata in EMMA 
   * http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS
-2.  Search or Browse metadata in Geoportal
+* Search or Browse metadata in Geoportal
   * http://www.ngdc.noaa.gov/geoportal
-3.  Search for metadata in IOOS Catalog
+* Search for metadata in IOOS Catalog
   * http://catalog.ioos.us/   
 
 ### How do I update or remove metadata in the service registry?
 The registry augments today's harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable. 
 
-1. If the content of the service has changed, but the service should still be registered then: 
+* If the content of the service has changed, but the service should still be registered then: 
   * Send an email to ioos.catalog@noaa.gov requesting a 'clean out' of a particular service or WAF. 
   * The NGDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder (WAF). 
   
-2. If the service is out date and should no longer be registered with IOOS then: 
+* If the service is out date and should no longer be registered with IOOS then: 
   * send an email to ioos.catalog@noaa.gov requesting that the service be removed. 
   * The service status will be changed to 'For Removal'. 
   * The NGDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
