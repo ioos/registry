@@ -30,7 +30,7 @@ The registration process is initiated by logging a request on the [IOOS Registry
    * SOS: A single getCapabilities request. Example: http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
    * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/
 2.  Point of contact: The person responsible for maintaining the service, or that person's supervisor
-3.  Organization: Regional Association (NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
+3.  Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
 ## What happens then?
 * The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted".    
