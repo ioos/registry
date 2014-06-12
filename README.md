@@ -2,7 +2,7 @@
 
 
 IOOS Service Registry Webinar
-Anna Milan gave a presentation on the IOOS Service Registry on March 13 for the IOOS data management community.  A recording of the webinar is available from the url:  https://mmancusa.webex.com/mmancusa/ldr.php?RCID=1ed739d35c7dc0de30ec03a3a7d0e086.
+Anna Milan gave a presentation on the IOOS Service Registry on March 13 for the IOOS data management community.  The Webinar  recording is available [here](https://mmancusa.webex.com/mmancusa/ldr.php?RCID=1ed739d35c7dc0de30ec03a3a7d0e086).
 
 In this webinar, Anna covered the processes that takes place behind the scenes when a service is submitted to the registry.  She described NGDC's Enterprise Metadata Management Architecture (EMMA).  There was a great discussion.  Please view the Webinar if you are interested in learning more.   
 
