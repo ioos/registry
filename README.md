@@ -32,8 +32,9 @@ The registration process is initiated by logging a request on the [IOOS Registry
 2.  Point of contact: The person responsible for maintaining the service, or that person's supervisor
 3.  Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
-## What happens then?
-* The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted".    
+## What happens after submitting metadata to the Service Registry?
+* The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid) and designated as "submitted". 
+# The "submitted" service metadata is automatically harvested
 * The "submitted" service metadata will be automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/). This harvest begins each evening around 1930 MT. 
 * If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT.  The WAF is manually checked, the next day, to verify the harvest has been successful.  The service status is changed from "submitted" to "approved" in the collection source table. Harvest is considered 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation. 
 * The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
