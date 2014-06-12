@@ -50,7 +50,7 @@ The registration process is initiated by logging a request on the [IOOS Registry
 3.  Search for metadata in IOOS Catalog
   * http://catalog.ioos.us/   
 
-### How do I update or remove previously harvested metadata?
+### How do I update or remove metadata in the service registry?
 The registry augments today's harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable. 
 
 1. If the content of the service has changed, but the service should still be registered then: 
@@ -63,7 +63,7 @@ The registry augments today's harvest with all previous harvests and sometimes t
   * The NGDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
   * The NGDC admin will change the service status to 'Removed'. 
 
-## What if my THREDDS catalogs contain `catalogRef` elements?
+### What if my THREDDS catalogs contain `catalogRef` elements?
 In THREDDS catalogs it is common to use `catalogRef` elements to reference other catalogs, especially in the [top level catalog](http://gis.stackexchange.com/questions/70919/setting-up-thredds-catalogs-for-ocean-model-data).  The NGDC crawler is currently not following `catalogRef` links, however.  So if you had a top level catalog that looked like this:
 ```
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
@@ -79,8 +79,7 @@ In THREDDS catalogs it is common to use `catalogRef` elements to reference other
 ```
 and you wanted all the content to be harvested, you would not submit the top level catalog (which would harvest nothing).  A top URL would look like http://ra.org/thredds/catalog/catalog.xml.  Instead you would submit the two child catalogs for harvesting.  An example of a child catalog URL would be like this - http://ra.org/thredds/catalog/content/catalog.xml.
 
-
-# ESRI Geoportal
+### ESRI Geoportal
 
 Main link http://www.ngdc.noaa.gov/geoportal and the dataset browsing page is at http://www.ngdc.noaa.gov/geoportal/catalog/search/browse/browse.page.  
 
