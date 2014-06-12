@@ -37,9 +37,16 @@ The registration process is initiated by logging a request on the [IOOS Registry
 
 ##### The "submitted" service metadata is automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/).
 * Harvesting begins each evening around 1930 MT. 
-* If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT the next day.  The WAF is manually checked, the next day, to verify the harvest has been successful.  The service status is manually changed from "submitted" to "approved" in the collection source table. Harvest is considered 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation. 
-* The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
-* The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
+* If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT the next day.  The WAF is manually checked, the next day, to verify the harvest has been successful.  The service status is manually changed from "submitted" to "approved" in the collection source table. 
+
+#### Transformation to ISO 19115-2
+* The harvest process includes transformation of the metadata to the ISO 19115-2 standard.  
+* Harvest is 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation.
+
+#### ISO records are posted EMMA WAFs.
+* The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715. 
+
+#### The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
 
 ### How do I check to see if my metadata has been registered?
@@ -55,7 +62,7 @@ The registry augments today's harvest with all previous harvests and sometimes t
 
 1. If the content of the service has changed, but the service should still be registered then: 
   * Send an email to ioos.catalog@noaa.gov requesting a 'clean out' of a particular service or WAF. 
-  * The NgDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder (WAF). 
+  * The NGDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder (WAF). 
   
 2. If the service is out date and should no longer be registered with IOOS then: 
   * send an email to ioos.catalog@noaa.gov requesting that the service be removed. 
