@@ -36,18 +36,21 @@ The registration process is initiated by logging a request on the [IOOS Registry
 ### What happens after submitting metadata to the Service Registry?
 * The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid) and designated as "submitted". 
 
-##### The "submitted" service metadata is automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/).
+##### Harvest Nightly
+* The "submitted" service metadata is automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/).
 * Harvesting begins each evening around 1930 MT. 
 * If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT the next day.  The WAF is manually checked, the next day, to verify the harvest has been successful.  The service status is manually changed from "submitted" to "approved" in the collection source table. 
 
-#### Transformation to ISO 19115-2
+#### Transform to ISO
 * The harvest process includes transformation of the metadata to the ISO 19115-2 standard.  
 * Harvest is 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation.
 
-#### ISO records are posted EMMA WAFs.
+#### Publish in IOOS Regional WAFs in EMMA
+* ISO records are posted EMMA WAFs.
 * The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715. 
 
-#### The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
+#### Synchronize Daily to Geoportal
+* The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
 
 ### How do I check to see if my metadata has been registered?
