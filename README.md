@@ -21,6 +21,7 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png) 
 **Figure 1.** IOOS service metadata registration steps 
 
+#### Register Service Endpoint in Collection Source Table
 The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 
 * Service URL: 
   * http://sos.aoos.org/sos/sos/kvp?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
@@ -28,7 +29,6 @@ The registration process is initiated by logging a request on the [IOOS Registry
 * Service Point of Contact: The person responsible for maintaining the service or that person's supervisor 
 * Service Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS)
 
-#### Register Service Endpoint in Collection Source Table
 * Accepted Registry Services (Service URL or metadata collection in a Web Accessible Folder (WAF))
    * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by `CatalogRef` are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml
    * WMS: A single getCapabilities file. Example: http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&version=1.3.0&request=GetCapabilities
