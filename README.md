@@ -1,4 +1,4 @@
-# Updates
+### Updates
 
 
 IOOS Service Registry Webinar
@@ -6,7 +6,7 @@ Anna Milan gave a presentation on the IOOS Service Registry on March 13 for the 
 
 In this webinar, Anna covered the processes that takes place behind the scenes when a service is submitted to the registry.  She described NGDC's Enterprise Metadata Management Architecture (EMMA).  There was a great discussion.  Please view the Webinar if you are interested in learning more.   
 
-# IOOS Service Registry at NGDC
+### IOOS Service Registry at NGDC
 
 The Service Registry (aka the registry) provides the master list of data sets available via DMAC data access services.  The registry is the official record of what is included in U.S. IOOS.  It is hosted and operated by NGDC and provides a web based discovery interface for IOOS data. 
 
@@ -16,7 +16,7 @@ The primary client for the Service Registry is the [IOOS Catalog](http://catalog
 
 TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, Metrics and Tools, Geoportal)  
 
-## How do I submit metadata to the Service Registry?
+### How do I submit metadata to the Service Registry?
   
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png) 
 **Figure 1.** IOOS service metadata registration steps 
@@ -32,7 +32,7 @@ The registration process is initiated by logging a request on the [IOOS Registry
 2.  Point of contact: The person responsible for maintaining the service, or that person's supervisor
 3.  Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
-## What happens after submitting metadata to the Service Registry?
+### What happens after submitting metadata to the Service Registry?
 * The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid) and designated as "submitted". 
 
 ##### The "submitted" service metadata is automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/).
@@ -41,28 +41,27 @@ The registration process is initiated by logging a request on the [IOOS Registry
 * The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715.  
 * The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
 * The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 8 hours. 
-* Other addtional pathways to consider for registering new data using the issues in this repository: Service queries to other catalogs e.g. CSW or OAI-PMH call to NODC geoportal for GHRSST.
 
-## How do I check the results?
-* Review metadata and assessments of metadata in EMMA 
+### How do I check to see if my metadata has been registered?
+1.  Review metadata and assessments of metadata in EMMA 
   * http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS
-* Search or Browse metadata in Geoportal
+2.  Search or Browse metadata in Geoportal
   * http://www.ngdc.noaa.gov/geoportal
-* Search for metadata in IOOS Catalog
+3.  Search for metadata in IOOS Catalog
   * http://catalog.ioos.us/   
 
-## How do I remove previously harvested metadata?
+### How do I update or remove previously harvested metadata?
 The registry augments today's harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable. 
 
 1. If the content of the service has changed, but the service should still be registered then: 
-  * send an email to ioos.catalog@noaa.gov requesting a 'clean out' of a particular service or WAF. 
-  * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
+  * Send an email to ioos.catalog@noaa.gov requesting a 'clean out' of a particular service or WAF. 
+  * The NgDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder (WAF). 
   
 2. If the service is out date and should no longer be registered with IOOS then: 
   * send an email to ioos.catalog@noaa.gov requesting that the service be removed. 
-  * Rob will change the status of the service to 'For Removal' 
-  * The administrator at NGDC will then manually set a flag that will remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
-  * The admin at NGDC will then change the status of the servic in the Collection Source table to 'Removed'. 
+  * The service status will be changed to 'For Removal'. 
+  * The NGDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder. 
+  * The NGDC admin will change the service status to 'Removed'. 
 
 ## What if my THREDDS catalogs contain `catalogRef` elements?
 In THREDDS catalogs it is common to use `catalogRef` elements to reference other catalogs, especially in the [top level catalog](http://gis.stackexchange.com/questions/70919/setting-up-thredds-catalogs-for-ocean-model-data).  The NGDC crawler is currently not following `catalogRef` links, however.  So if you had a top level catalog that looked like this:
