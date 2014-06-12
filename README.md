@@ -24,14 +24,13 @@ TODO: Describe the layout using the figure below (Harvestors, XSLT, ncISO, WAF, 
 The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 1) Service URL 3) Service Point of Contact and 3) Service Organization.
 
 1. Accepted Registry Services (Service URL or metadata collection in a Web Accessible Folder (WAF))
-
    * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by `CatalogRef` are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml
    * WMS: A single getCapabilities file. Example: http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&version=1.3.0&request=GetCapabilities
    * ERDDAP: The list of ISO records provided by ERDDAP. Example: http://erddap.secoora.org/erddap/metadata/iso19115/xml/
    * SOS: A single getCapabilities request. Example: http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
    * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/
-2. Point of contact: The person responsible for maintaining the service, or that person's supervisor
-3. Organization: Regional Association (NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
+2.  Point of contact: The person responsible for maintaining the service, or that person's supervisor
+3.  Organization: Regional Association (NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
 ## What happens then?
 * The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  It is listed as "submitted".    
