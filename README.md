@@ -92,7 +92,7 @@ In THREDDS catalogs it is common to use `catalogRef` elements to reference other
 </catalog>
 ```
 and you wanted all the content to be harvested, you would not submit the top level catalog (which would harvest nothing).  
-A top level URL that would not be harvestd looks like 
+A top level URL looks like 
   * http://ra.org/thredds/catalog/catalog.xml.  
 Instead you would submit the two child catalogs for harvesting.  An example of a child catalog URL would be like this
   * http://ra.org/thredds/catalog/content/catalog.xml.
