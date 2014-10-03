@@ -54,11 +54,17 @@ The registration process is initiated by logging a request on the [IOOS Registry
 
 #### Synchronize Daily to Geoportal
 * The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
-* The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 24 hours.  The current (03 October 2014) harvest schedule for the catalog is:
-  * harvests start nightly at 7:10am UTC (2:10am eastern
+ 
+#### IOOS Catalog 
+The [IOOS Catalog](http://catalog.ioos.us/) queries the Geoportal daily for a list of services registered to IOOS.  These services are then individually queried by the Catalog and their metadata is harvested and indexed.
+
+Briefly the current (03 October 2014) harvest schedule for the catalog is:
+  * harvests start nightly at 7:10am UTC (2:10am eastern)
   * cleanups start nightly at 8:10am UTC (3:10am eastern)
   * reindex daily daily at 6:30am UTC (1:30am eastern)
   * daily status emails at 6:20am UTC (1:20am eastern)
+
+See the Catalog [documentation](github.com/ioos/catalog) for more information on what is indexed and how.  
 
 ### How do I check to see if my metadata has been registered?
 * Review metadata and assessments of metadata in EMMA 
