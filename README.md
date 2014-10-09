@@ -1,4 +1,4 @@
-### IOOS Service Registry at NGDC
+### IOOS Service Registration Process 
 
 IOOS Service Registry Webinar available   [here](https://mmancusa.webex.com/mmancusa/ldr.php?RCID=1ed739d35c7dc0de30ec03a3a7d0e086).  This Webinar was presented by Anna Milan from NGDC and recorded in February 2014.  
 
