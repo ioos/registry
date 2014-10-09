@@ -44,8 +44,8 @@ The Service Registration process ends when a valid ISO record has been created a
 ### Monitoring the registration harvesting process
 
 #### To check if your metadata has been registered 
-* Look in the collection source table [here](http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS)
-* Search or Browse metadata in [Geoportal](http://www.ngdc.noaa.gov/geoportal)
+* Look in the collection source table [here](http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS).
+* Search or Browse metadata in [Geoportal](http://www.ngdc.noaa.gov/geoportal).
 
 #### To update or remove metadata in the service registry
 
