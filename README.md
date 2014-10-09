@@ -2,15 +2,15 @@
 
 IOOS Service Registry Webinar available   [here](https://mmancusa.webex.com/mmancusa/ldr.php?RCID=1ed739d35c7dc0de30ec03a3a7d0e086).  This Webinar was presented by Anna Milan from NGDC and recorded in February 2014.  
 
-#### Introduction
+### Introduction
 
 The [Service Registry ("Registry")](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid) is the official list of service urls included in U.S. IOOS that provide access to IOOS data through DMAC services.  The Registry is hosted and operated by NGDC and provides the Web based discovery interface for IOOS data.  It has three functions: 1) harvest metadata from submitted service URLs 2) Transform metadata to iSO and generate and maintain WAFs 3) NGDC harvest of ISO metadata.  This Github repository is the primary source for documentation for the registration process and contains steps, process descriptions, and examples. 
 
 The primary client for the service registry is the [IOOS Catalog](http://catalog.ioos.us).  The catalog and the Geoportal are connected by a CSW interface.  For more about the Catalog, go to the [catalog repository on github](http://github.com/ioos/catalog) for information and code supporting the generation of the catalog.   
 
-#### Steps for registring IOOS Service Metadata
+### Steps for registring IOOS Service Metadata
 
-### Submitting a Service URL or Web Accessible Folder: 
+#### Submitting a Service URL or Web Accessible Folder: 
 The registration process starts with submitting a request on the issue tracker in the [IOOS Registry Github Repository] (https://github.com/ioos/registry/issues?state=open).  IOOS Service Metadata can be registered through a Service URL or metadata collection in a Web Accessible Folder (WAF).  For each request, the following information should be included:    
 * A Service URL or metadata collectin in a Web Accessible Folder (WAF) (examples): 
   * Service URL: http://sos.aoos.org/sos/sos/kvp?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0 
@@ -38,10 +38,10 @@ The Web services that can be registered with the IOOS Registry are:
 * Step 3: The second step in the harvesting process is publication of the ISO metadata records into a [production WAFs](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/).  This happens 3 days after the service is submitted by 0715 MT/ 0515 ET.
 * Step 4: Geoportal Harvesting: The [NGDC Geoportal](http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests ISO records from the WAF by 0900 MT/ 1100 ET.   
 
-### When does registration end?
+#### When does registration end?
 The Service Registration process ends when a valid ISO record has been created and added to the production WAF.  The metadata should be able to be found in the [NGDC Geoportal](http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page).  
 
-## Monitoring the registration harvesting process
+### Monitoring the registration harvesting process
 
 #### To check if your metadata has been registered 
 * Look in the collection source table [here](http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS)
@@ -87,10 +87,10 @@ Main link http://www.ngdc.noaa.gov/geoportal and the dataset browsing page is at
 The [master uuid listing for geoportal collections (e.g. RAs)](https://github.com/ioos/registry/blob/master/uuid.csv)
 
 
-## Geoportal Search Examples (REST API)
+### Geoportal Search Examples (REST API)
 Below are selected example searches that can be issued against the NGDC Geoportal to search for IOOS Regional Association assets.   Additional information on the Geoportal in general can be found on the [ESRI Sourceforge site](https://sourceforge.net/apps/mediawiki/geoportal/index.php?title=REST_API_Syntax)
 
-### Date Search Example
+#### Date Search Example
 Search within the PacIOOS collection for records with start date 2009-02-01 to end date 2012-02-01 with JSON response: [PacIOOS Date Search Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&searchText=startDate%3A%5B1800-01-01%20TO%202012-02-01%5D%20AND%20endDate%3A%5B2009-02-01%20TO%202100-01-01%5D%20%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%7D%22&start=1&max=10&orderBy=relevance&maxSearchTimeMilliSec=10000&f=pjson)
 
 Decoded Parameters: 
@@ -98,7 +98,7 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&searchText=startDate:[1800-01-01 TO 2012-02-01] AND endDate:[2009-02-01 TO 2100-01-01] AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=10&orderBy=relevance&maxSearchTimeMilliSec=10000&f=pjson
 ```
 
-### Keyword Example
+#### Keyword Example
 Search within the PacIOOS WAF for keywords `sea_water_salinity` with JSON response: [PacIOOS Keyword Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&searchText=keywords%3A%20sea_water_salinity%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%7D%22&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=pjson)
 
 Decoded Parameters: 
@@ -106,7 +106,7 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&searchText=keywords: sea_water_salinity AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=pjson
 ```
 
-### Geographic Search Example
+#### Geographic Search Example
 Search within the PacIOOS WAF for metadata records within -164.9246,16.6012,-149.4899,25.3959 with JSON response: [PacIOOS Geo Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&searchText=sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%7D%22&start=1&max=1000&orderBy=relevance&spatialRel=esriSpatialRelWithin&bbox=-164.9246,16.6012,-149.4899,25.3959&maxSearchTimeMilliSec=10000&f=pjson)
 
 Decoded Parameters: 
@@ -114,7 +114,7 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&searchText=sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&spatialRel=esriSpatialRelWithin&bbox=-164.9246,16.6012,-149.4899,25.3959&maxSearchTimeMilliSec=10000&f=pjson
 ```
 
-### Multi-Criteria Example
+#### Multi-Criteria Example
 Search within the PacIOOS WAF for metadata records with all of the above with JSON response: [PacIOOS Multi Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&rids=local&searchText=keywords%3A%20sea_water_salinity%20AND%20endDate%3A%5B2009-02-01%20TO%202100-01-01%5D%20AND%20startDate%3A%5B1800-01-01%20TO%202012-02-01%5D%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&start=1&max=1000&orderBy=relevance&spatialRel=esriSpatialRelWithin&bbox=-164.9246,16.6012,-149.4899,25.3959&maxSearchTimeMilliSec=10000&f=pjson)
 
 Decoded Parameters: 
@@ -122,7 +122,7 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=keywords: sea_water_salinity AND endDate:[2009-02-01 TO 2100-01-01] AND startDate:[1800-01-01 TO 2012-02-01] AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&spatialRel=esriSpatialRelWithin&bbox=-164.9246,16.6012,-149.4899,25.3959&maxSearchTimeMilliSec=10000&f=pjson
 ```
 
-### WMS Example
+#### WMS Example
 Search within the PacIOOS WAF for metadata records with a WMS service endpoint with GeoRSS response: [PacIOOS WMS Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&rids=local&searchText=sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22%20AND%20wms.resource.url%3A*&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=georss)
 
 Decoded Parameters: 
@@ -130,7 +130,7 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=wms.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=georss
 ```
 
-### WCS Example
+#### WCS Example
 Search within the PacIOOS WAF for metadata records with a WCS service endpoint with html response: [PacIOOS WCS Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&rids=local&searchText=wcs.resource.url:*%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html)
 
 Decoded Parameters: 
@@ -138,7 +138,7 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=wcs.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html
 ```
 
-### SOS Example 
+#### SOS Example 
 Search within the PacIOOS WAF for metadata records with an SOS service endpoint with html response: [PacIOOS SOS Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&rids=local&searchText=sos.resource.url:*%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html)
 
 Decoded Parameters: 
@@ -146,7 +146,7 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=sos.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html
 ```
 
-### OPeNDAP Example 
+#### OPeNDAP Example 
 Search within the PacIOOS WAF for metadata records with a OpenDAP service endpoint with html response: [PacIOOS OPeNDAP Example Link](http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&ridName=NOAA%27s%20Geophysical%20Data%20Center&rids=local&searchText=odp.resource.url:*%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html)
 
 Decoded Parameters: 
@@ -154,14 +154,14 @@ Decoded Parameters:
 rid=local&ridName=NOAA's Geophysical Data Center&rids=local&searchText=odp.resource.url:* AND sys.siteuuid:"{68FF11D8-D66B-45EE-B33A-21919BB26421}"&start=1&max=1000&orderBy=relevance&maxSearchTimeMilliSec=10000&f=html
 ```
 
-## Geoportal Search Examples (CSW)
+### Geoportal Search Examples (CSW)
 
 NGDC CSW Service Endpoint: http://www.ngdc.noaa.gov/geoportal/csw
 The examples below must be made as an XML POST request.
 
 PacIOOS collection
 
-### WMS Search Example
+#### WMS Search Example
 ```xml
 <?xml version="1.0"?>	
 <csw:GetRecords xmlns:csw="http://www.opengis.net/cat/csw/2.0.2" version="2.0.2" service="CSW" resultType="results" 
@@ -186,7 +186,7 @@ outputSchema="http://www.isotc211.org/2005/gmd" startPosition="1" maxRecords="10
 </csw:GetRecords>
 ```
 
-### WCS Search Example
+#### WCS Search Example
 ```xml
 <?xml version="1.0"?>	
 <csw:GetRecords xmlns:csw="http://www.opengis.net/cat/csw/2.0.2" version="2.0.2" service="CSW" resultType="results" 
@@ -211,7 +211,7 @@ outputSchema="http://www.isotc211.org/2005/gmd" startPosition="1" maxRecords="10
 </csw:GetRecords>
 ```
 
-### OPeNDAP Search Example
+#### OPeNDAP Search Example
 
 ```xml
 <?xml version="1.0"?>	
@@ -237,7 +237,7 @@ outputSchema="http://www.isotc211.org/2005/gmd" startPosition="1" maxRecords="10
 </csw:GetRecords>
 ```
 
-### SOS Search Example
+#### SOS Search Example
 
 ```xml
 <?xml version="1.0"?>	
@@ -263,7 +263,7 @@ outputSchema="http://www.isotc211.org/2005/gmd" startPosition="1" maxRecords="10
 </csw:GetRecords>
 ```
 
-### ISO Date Modified Search
+#### ISO Date Modified Search
 
 ```xml
 <csw:GetRecords xmlns:csw="http://www.opengis.net/cat/csw/2.0.2" version="2.0.2" service="CSW" resultType="results" startPosition="1" maxRecords="11" outputSchema="http://www.isotc211.org/2005/gmd"> <csw:Query typeNames="csw:Record" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" > 
@@ -284,7 +284,7 @@ outputSchema="http://www.isotc211.org/2005/gmd" startPosition="1" maxRecords="10
 </csw:GetRecords> 
 ```
 
-## Introduction to IOOS Catalog Harvest Process
+### Introduction to IOOS Catalog Harvest Process
 
 The interface between the [NGDC Geoportal](http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) and the [IOOS Catalog](http://catalog.ioos.us/) is the CSW interface.
 
