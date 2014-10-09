@@ -2,7 +2,7 @@
 
 IOOS Service Registry Webinar available   [here](https://mmancusa.webex.com/mmancusa/ldr.php?RCID=1ed739d35c7dc0de30ec03a3a7d0e086).  This Webinar was presented by Anna Milan from NGDC and recorded in February 2014.  
 
-#### Service Registration Introduction
+#### Introduction
 
 The [Service Registry ("Registry")](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid) is the official list of service urls included in U.S. IOOS that provide access to IOOS data through DMAC services.  The Registry is hosted and operated by NGDC and provides the Web based discovery interface for IOOS data.  It has three functions: 1) harvest metadata from submitted service URLs 2) Transform metadata to iSO and generate and maintain WAFs 3) NGDC harvest of ISO metadata.  This Github repository is the primary source for documentation for the registration process and contains steps, process descriptions, and examples. 
 
