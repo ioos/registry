@@ -16,18 +16,18 @@ The registration process starts with submitting a request on the issue tracker i
   * Service URL: http://sos.aoos.org/sos/sos/kvp?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0 
   * Service URL: http://sos.maracoos.org/stable/agg_catalogs/weatherflow_agg_catalog.xml
   * ISO WAF: http://www.neracoos.org/WAF/UMaine/iso/
-* Service Point of Contact: The person responsible for maintaining the service or that person's supervisor 
-* Service Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS)
+* Service Point of Contact: The person responsible for maintaining the service or that person's supervisor. 
+* Service Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).
 
 ![Registration process](https://raw.github.com/ioos/registry/master/doc/images/IOOS%20Harvest%20Process.png) 
 **Figure 1.** IOOS service metadata registration steps
 
 The Web services that can be registered with the IOOS Registry are: 
-   * SOS: A single getCapabilities request. Example: http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
-   * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by `CatalogRef` are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml
-   * ERDDAP: The list of ISO records provided by ERDDAP. Example: http://erddap.secoora.org/erddap/metadata/iso19115/xml/
-   * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/
-   * WMS: A single getCapabilities file. Example: http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&version=1.3.0&request=GetCapabilities
+   * SOS: A single getCapabilities request. Example: http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0.
+   * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by `CatalogRef` are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml.
+   * ERDDAP: The list of ISO records provided by ERDDAP. Example: http://erddap.secoora.org/erddap/metadata/iso19115/xml/.
+   * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/iso/.
+   * WMS: A single getCapabilities file. Example: http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&version=1.3.0&request=GetCapabilities.
 
 ### What happens after metadata is submitted to the Service Registry? 
 * The URL submitted is manually added to the [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid).  The service is listed as "submitted". 
@@ -289,10 +289,7 @@ outputSchema="http://www.isotc211.org/2005/gmd" startPosition="1" maxRecords="10
 The interface between the [NGDC Geoportal](http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) and the [IOOS Catalog](http://catalog.ioos.us/) is the CSW interface.
 
 The primary client of the Registry is the Catalog.  The [IOOS Catalog](http://catalog.ioos.us/) will automatically harvest records from the NGDC Geoportal every 24 hours.  The current (03 October 2014) harvest schedule for the catalog is:
-  * The Catalog start to harvest at 0710 UTC (3:10 am ET)
-  * The Catalog begins to clean up at 0810 UTC (4:10am ET)
-  * The metadata records are reindexed daily at 0630 UTC (1:30am ET)
-  * The Catalog team is sent a status email at 0620 UTC (1:20am ET)
-
-
-
+  * The Catalog start to harvest at 0710 UTC (3:10 am ET).
+  * The Catalog begins to clean up at 0810 UTC (4:10am ET).
+  * The metadata records are reindexed daily at 0630 UTC (1:30am ET).
+  * The Catalog team is sent a status email at 0620 UTC (1:20am ET).
