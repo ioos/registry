@@ -14,7 +14,7 @@ This repository is the primary source for documentation for the registration pro
 
 #### Submitting a Service URL or Web Accessible Folder: 
 The registration process starts with submitting a request on the issue tracker in the [IOOS Registry Github Repository] (https://github.com/ioos/registry/issues?state=open).  IOOS Service Metadata can be registered through a Service URL or metadata collection in a Web Accessible Folder (WAF).  For each request, the following information should be included:    
-* A Service URL or metadata collectin in a Web Accessible Folder (WAF) (examples): 
+* A Service URL or metadata collection in a Web Accessible Folder (WAF) (examples): 
   * Service URL: http://sos.aoos.org/sos/sos/kvp?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0 
   * Service URL: http://sos.maracoos.org/stable/agg_catalogs/weatherflow_agg_catalog.xml
   * ISO WAF: http://www.neracoos.org/WAF/UMaine/iso/
