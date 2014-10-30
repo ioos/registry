@@ -43,6 +43,62 @@ The Web services that can be registered with the IOOS Registry are:
 #### When does registration end?
 The Service Registration process ends when a valid ISO record has been created and added to the production WAF.  The metadata should be able to be found in the [NGDC Geoportal](http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page).  
 
+#### Register Service Endpoint in Collection Source Table
+The registration process is initiated by logging a request on the [IOOS Registry Github Repository issue tracker] (https://github.com/ioos/registry/issues?state=open) and/or sending an email to ioos.catalog@noaa.gov.  Include the following with each request made: 
+* Service URL: 
+  * http://sos.aoos.org/sos/sos/kvp?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
+  * http://sos.maracoos.org/stable/agg_catalogs/weatherflow_agg_catalog.xml
+* Service Point of Contact: The person responsible for maintaining the service or that person's supervisor 
+* Service Organization: Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS)
+
+* Accepted Registry Services (Service URL or metadata collection in a Web Accessible Folder (WAF))
+   * THREDDS: A THREDDS catalog using the .xml extension.  The catalog tree is crawled for all child datasets, but other catalogs referenced by `CatalogRef` are not followed.   Thus registering a catalog that just points to other catalogs will not work.  The individual catalogs must be registered.  Example: http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml
+   * WMS: A single getCapabilities file. Example: http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&version=1.3.0&request=GetCapabilities
+   * ERDDAP: The list of ISO records provided by ERDDAP. Example: http://erddap.secoora.org/erddap/metadata/iso19115/xml/
+   * SOS: A single getCapabilities request. Example: http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0
+   * WAF: A web accessible folder containing ISO metadata XML documents.  This offers the most control over the metadata that will appear in the registry, but requires effort to create and maintain. Example: http://www.neracoos.org/WAF/UMaine/iso/
+
+### What happens after submitting metadata to the Service Registry?
+* The URL is manually added to the Service Registry [collection source table](https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&layout=fluid) and designated as "submitted". 
+
+##### Harvest Nightly
+* The "submitted" service metadata is automatically harvested into a [test Web Accessible Folder (WAF)](http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/).
+* Harvesting begins each evening around 1930 MT. 
+* If successfully harvested, the test WAF is populated with an ISO metadata record by 0715 MT the next day.  The WAF is manually checked, the next day, to verify the harvest has been successful.  The service status is manually changed from "submitted" to "approved" in the collection source table. 
+
+#### Transform to ISO
+* The harvest process includes transformation of the metadata to the ISO 19115-2 standard.  
+* Harvest is 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation.
+
+#### Publish in IOOS Regional WAFs in EMMA
+* ISO records are posted EMMA WAFs.
+* The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715. 
+
+#### Synchronize Daily to Geoportal
+* The [NGDC Geoportal] (http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page) automatically harvests records from the WAF around 0900. 
+ 
+#### IOOS Catalog 
+The [IOOS Catalog](http://catalog.ioos.us/) queries the Geoportal daily for a list of services registered to IOOS.  These services are then individually queried by the Catalog and their metadata is harvested and indexed.
+
+Briefly, the current (03 October 2014) harvest schedule for the catalog is:
+  * harvests start nightly at 7:10am UTC (2:10am eastern)
+  * cleanups start nightly at 8:10am UTC (3:10am eastern)
+  * reindex daily daily at 6:30am UTC (1:30am eastern)
+  * daily status emails at 6:20am UTC (1:20am eastern)
+
+See the Catalog [documentation](http://github.com/ioos/catalog) for more information on what is indexed and how.  
+
+### How do I check to see if my metadata has been registered?
+* Review metadata and assessments of metadata in EMMA 
+  * http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&title=Metrics%20and%20Collections%20for%20Group%20IOOS&groupName=IOOS
+* Search or Browse metadata in Geoportal
+  * http://www.ngdc.noaa.gov/geoportal
+* Search for metadata in IOOS Catalog
+  * http://catalog.ioos.us/   
+
+### How do I update or remove metadata in the service registry?
+The registry augments today's harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable. 
+
 ### Monitoring the registration harvesting process
 
 #### To check if your metadata has been registered 
