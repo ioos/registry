@@ -70,6 +70,11 @@ The registration process is initiated by logging a request on the [IOOS Registry
 * The harvest process includes transformation of the metadata to the ISO 19115-2 standard.  
 * Harvest is 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation.
 
+##### Transformation Files
+* ncISO: http://www.ngdc.noaa.gov/metadata/published/xsl/nciso2.0/UnidataDD2MI.xsl
+* WMS Get Capabilities to ISO: http://www.ngdc.noaa.gov/metadata/published/xsl/wms1.3_to_isoSV.xsl
+* SOS Get Capabilities to ISO: http://www.ngdc.noaa.gov/metadata/published/xsl/SensorObservationService/SOS2ISO_MI.xsl
+
 #### Publish in IOOS Regional WAFs in EMMA
 * ISO records are posted EMMA WAFs.
 * The [production WAF](http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/) in EMMA is automatically populated on day 3 (day after the status has been changed to "approved ") by 0715. 
