@@ -71,7 +71,9 @@ The registration process is initiated by logging a request on the [IOOS Registry
 * Harvest is 'successful' when the metadata records appear in the */iso WAF and pass ISO 19139 schema validation.
 
 ##### Transformation Files
-* ncISO: http://www.ngdc.noaa.gov/metadata/published/xsl/nciso2.0/UnidataDD2MI.xsl
+* ncISO: 
+** Official Master: https://github.com/Unidata/threddsIso/blob/master/src/main/resources/xsl/nciso/UnidataDD2MI.xsl 
+** NGDC copy: http://www.ngdc.noaa.gov/metadata/published/xsl/nciso2.0/UnidataDD2MI.xsl
 * WMS Get Capabilities to ISO: http://www.ngdc.noaa.gov/metadata/published/xsl/wms1.3_to_isoSV.xsl
 * SOS Get Capabilities to ISO: http://www.ngdc.noaa.gov/metadata/published/xsl/SensorObservationService/SOS2ISO_MI.xsl
 
