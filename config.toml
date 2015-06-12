@@ -1,0 +1,21 @@
+baseurl = "http://ioos.github.io/registry/"
+CanonifyUrls = true
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+languageCode = "en-us"
+[params]
+  Title = "U.S. IOOS Service Registration Process"
+  Tagline = "Guidelines for IOOS DMAC Metadata Publication on NGDC Geoportal and IOOS Catalog"
+[params.Github]
+  Head = "master"
+  Url = "https://github.com/ioos/registry"
+[[menu.extramedia]]
+    name = "Webinar: IOOS Service Registration Process (WebEx Recording)"
+    url = "https://mmancusa.webex.com/mmancusa/ldr.php?RCID=1ed739d35c7dc0de30ec03a3a7d0e086"
+    weight = -110
+    identifier = "webinar"
+
+
+	
+ 

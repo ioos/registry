@@ -1,0 +1,75 @@
+{{ partial "default_head.html" . }}
+
+  <div class="content container">
+	<div class="posts">
+      <div class="post">
+<!--
+ 	    {{ range first 1 .Data.Pages }}
+           <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+        	{{ if eq .RelPermalink "/animal-telemetry/index.html" }} 
+				{{ .Content }}
+			{{else}}
+				{{ .Summary }} 
+				<footer>
+					<a href='{{ .Permalink }}'><nobr><i>Read more ></i></nobr></a>
+				</footer>
+			{{end}}
+		{{ end }}
+-->
+ 	    {{ range first 1 .Data.Pages }}
+           <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+        	{{ if eq .RelPermalink "/index.html" }} 
+				{{ .Content }}
+				<footer>
+					<a href='./ioos_registration_ngdc/'><nobr><i>Read more ></i></nobr></a>
+				</footer>
+			{{else}}
+				{{ .Summary }} 
+				<footer>
+					<a href='{{ .Permalink }}'><nobr><i>Read more ></i></nobr></a>
+				</footer>
+			{{end}}
+		{{ end }}
+<!--
+ 	    {{ range .Data.Pages }}
+           <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+        	{{ if eq .RelPermalink "/[REPOSITORY_NAME_HERE]/index.html" }} 
+				{{ .Content }}
+				<footer>
+					<a href='./[MARKDOWN_FILE_NAME_HERE]/'><nobr><i>Read more ></i></nobr></a>
+				</footer>
+			{{else}}
+				{{ .Summary }} 
+				<footer>
+					<a href='{{ .Permalink }}'><nobr><i>Read more ></i></nobr></a>
+				</footer>
+			{{end}}
+		{{ end }}
+-->
+<!--
+ 	    {{ range .Data.Pages }}
+           <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+        	{{ if eq .RelPermalink "/animal-telemetry/index.html" }} 
+				{{ .Content }}
+				<footer>
+					<a href='./animal-telemetry/'><nobr><i>Read more ></i></nobr></a>
+				</footer>
+			{{end}}
+		{{ end }}
+-->
+<!--
+ 	    {{ range .Data.Pages }}
+           <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+        	{{ if eq .RelPermalink "/animal-telemetry/index.html" }} 
+				{{ .Summary }} 
+				<footer>
+					<a href='./animal-telemetry/'><nobr><i>Read more ></i></nobr></a>
+				</footer>
+			{{end}}
+		{{ end }}
+-->		
+ 	  </div>
+    </div>
+  </div>
+
+{{ partial "default_foot.html" . }}
