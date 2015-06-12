@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>http://ioos.github.io/registry/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-08-04 07:56:39 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>ABOUT: IOOS Service Registration Process</title>
+          <link>http://ioos.github.io/registry/index.html</link>
+          <pubDate>Mon, 04 Aug 2014 07:56:39 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/registry/index.html</guid>
+          <description>&lt;p&gt;&lt;em&gt;The registration of the IOOS services is a process that allows the wide range of various clients to efficiently discover U.S. IOOS data.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Currently, all U.S. IOOS DMAC services must be registered with the &lt;a href=&#34;https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&amp;amp;layout=fluid&#34;&gt;Service Registry (&amp;ldquo;Registry&amp;rdquo;)&lt;/a&gt;, which is hosted and operated by the NGDC. The IOOS Service registry location and required procedures may change in the future; in such case, the Registration Process Guidelines will be updated accordingly&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>IOOS Service Registration Process Guidelines</title>
+          <link>http://ioos.github.io/registry/ioos_registration_ngdc/</link>
+          <pubDate>Mon, 04 Aug 2014 07:56:39 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/registry/ioos_registration_ngdc/</guid>
+          <description>
+
+&lt;!-- For a single homepage put in FrontMatter url = &#34;index.html&#34;; for a summary of multiple documents on one page do not put url parameter there at all --&gt;
+
+&lt;p&gt;The registration of the IOOS services is a process that allows the wide range of various clients to efficiently discover U.S. IOOS data. Currently, all U.S. IOOS DMAC services must be registered with the &lt;a href=&#34;https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&amp;amp;layout=fluid&#34;&gt;Service Registry (&amp;ldquo;Registry&amp;rdquo;)&lt;/a&gt;, which is hosted and operated by the NGDC.&lt;/p&gt;
+
+&lt;p&gt;The Registry is the official list of service URLs that provide access to U.S. IOOS data through DMAC-compliant services. The Registry performs the following operations to support the registration process:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;harvesting metadata from submitted URLs of the DMAC services or Web Accessible Folders (WAFs);&lt;/li&gt;
+&lt;li&gt;transforming metadata to ISO, generate and maintain WAFs for the ISO metadata records;&lt;/li&gt;
+&lt;li&gt;injecting the ISO metadata into NGDC Geoportal.&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Upon completion of the Registry&amp;rsquo;s operations, the IOOS data can be discovered through the Web-based &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page&#34;&gt;NGDC Geoportal interface&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The primary client for the service registry is the &lt;a href=&#34;http://catalog.ioos.us&#34;&gt;IOOS Catalog&lt;/a&gt;.  The IOOS Catalog fetches metadata from the Geoportal through CSW interface.  For more about the Catalog, go to the &lt;a href=&#34;http://github.com/ioos/catalog&#34;&gt;catalog repository on github&lt;/a&gt; for information and code supporting the generation of the catalog.&lt;/p&gt;
+
+&lt;p&gt;This repository is the primary source for documentation for the registration process and contains steps, process descriptions, and examples.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://mmancusa.webex.com/mmancusa/ldr.php?RCID=1ed739d35c7dc0de30ec03a3a7d0e086&#34;&gt;IOOS Service Registration Webinar&lt;/a&gt; was presented by Anna Milan from NGDC, and recorded in February 2014.&lt;/p&gt;
+
+&lt;h1 id=&#34;steps-for-registering-ioos-service-metadata:b50c3255fc3804594f54cd693ce053af&#34;&gt;Steps for registering IOOS Service Metadata&lt;/h1&gt;
+
+&lt;p&gt;The resources that currently can be registered with the Registry are (&lt;a href=&#34;#Fig_1&#34;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;&lt;/a&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;SOS&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;WMS&lt;/strong&gt;&lt;/em&gt; &amp;ndash;  by means of a single getCapabilities request, e.g.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://sos.aoos.org/sos/service?service=SOS&amp;amp;request=GetCapabilities&amp;amp;AcceptVersions=1.0.0)&#34;&gt;http://sos.aoos.org/sos/service?service=SOS&amp;amp;request=GetCapabilities&amp;amp;AcceptVersions=1.0.0)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&amp;amp;version=1.3.0&amp;amp;request=GetCapabilities&#34;&gt;http://www.neracoos.org/thredds/wms/WW3/fine.nc?service=WMS&amp;amp;version=1.3.0&amp;amp;request=GetCapabilities&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;THREDDS&lt;/strong&gt;&lt;/em&gt; &amp;ndash; by means of an XML catalog document (e.g. &lt;a href=&#34;http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml&#34;&gt;http://dm2.caricoos.org/thredds/catalog/swan/catalog.xml&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The individual catalogs must be registered; a catalog that just points to other catalogs cannot be registered &amp;mdash; although the catalog tree is crawled for all child datasets, the other catalogs referenced by &lt;code&gt;CatalogRef&lt;/code&gt; are ignored.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;ERDDAP&lt;/strong&gt;&lt;/em&gt; &amp;ndash; by means of an XML list of ISO records, e.g. &lt;a href=&#34;http://erddap.secoora.org/erddap/metadata/iso19115/xml/&#34;&gt;http://erddap.secoora.org/erddap/metadata/iso19115/xml/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;WAF&lt;/strong&gt;&lt;/em&gt; &amp;ndash; a Web Accessible Folder that contains ISO metadata XML documents, e.g. &lt;a href=&#34;http://www.neracoos.org/WAF/iso/&#34;&gt;http://www.neracoos.org/WAF/iso/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: WAFs offer the most control over the metadata that will appear in the registry, but require some efforts to create and maintain.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;a name=&#34;Fig_1&#34;&gt;&lt;/a&gt;&lt;img src=&#34;http://ioos.github.io/registry/images/IOOS_Harvest_Process_web.png&#34; alt=&#34;Registration process&#34; /&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;strong&gt;Figure 1: IOOS service metadata registration steps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-submitting-url-of-a-service-or-waf-to-the-collection-source-table:b50c3255fc3804594f54cd693ce053af&#34;&gt;1. Submitting URL of a Service or WAF to the Collection Source Table&lt;/h2&gt;
+
+&lt;p&gt;The registration process starts with submitting a request on the &lt;a href=&#34;https://github.com/ioos/registry/issues?state=open&#34;&gt;&lt;strong&gt;issue tracker&lt;/strong&gt;&lt;/a&gt; in the IOOS Registry Github Repository.&lt;/p&gt;
+
+&lt;p&gt;For each request, the following information should be included:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A URL of the Service or the Web Accessible Folder (WAF), for example:
+
+&lt;ul&gt;
+&lt;li&gt;SOS URL: &lt;a href=&#34;http://sos.aoos.org/sos/sos/kvp?service=SOS&amp;amp;request=GetCapabilities&amp;amp;AcceptVersions=1.0.0&#34;&gt;http://sos.aoos.org/sos/sos/kvp?service=SOS&amp;amp;request=GetCapabilities&amp;amp;AcceptVersions=1.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;THREDDS URL: &lt;a href=&#34;http://sos.maracoos.org/stable/agg_catalogs/weatherflow_agg_catalog.xml&#34;&gt;http://sos.maracoos.org/stable/agg_catalogs/weatherflow_agg_catalog.xml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ISO WAF: &lt;a href=&#34;http://www.neracoos.org/WAF/UMaine/iso/&#34;&gt;http://www.neracoos.org/WAF/UMaine/iso/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Service Point of Contact - the person responsible for maintaining the service or that person&amp;rsquo;s supervisor.&lt;/li&gt;
+&lt;li&gt;Service Organization, i.e. IOOS Regional Association (e.g. NERACOOS) or Federal Partner (e.g. NOAA CO-OPS).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The URL submitted is manually added to the &lt;a href=&#34;https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&amp;amp;layout=fluid&#34;&gt;Collection Source Table&lt;/a&gt;, and the service is listed as &amp;ldquo;&lt;strong&gt;submitted&lt;/strong&gt;&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;2-harvesting-and-converting-metadata:b50c3255fc3804594f54cd693ce053af&#34;&gt;2. Harvesting and Converting Metadata&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;submitted&lt;/strong&gt; URL or WAF is harvested each night at 19:30 MT/21:30 ET into the first of two NGDC WAFs.  The first WAF is the &lt;a href=&#34;http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/&#34;&gt;&lt;em&gt;&lt;strong&gt;test&lt;/strong&gt;&lt;/em&gt; WAF&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On day 2 (a day after the initial harvesting), the source metadata is transformed to ISO 19115-2 and will populate the  &lt;code&gt;*/iso&lt;/code&gt; &lt;a href=&#34;http://www.ngdc.noaa.gov/metadata/published/test/NOAA/IOOS/&#34;&gt;&lt;em&gt;&lt;strong&gt;test&lt;/strong&gt;&lt;/em&gt; WAF&lt;/a&gt; by 07:15 MT/ 09:15 ET the next day.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;The WAF is manually checked to verify the harvest has been successful, and the service status in the &lt;a href=&#34;https://www.ngdc.noaa.gov/docucomp/collectionSource/list?&amp;amp;layout=fluid&#34;&gt;Collection Source Table&lt;/a&gt; is manually changed from &lt;strong&gt;submitted&lt;/strong&gt; to &lt;strong&gt;approved&lt;/strong&gt; .&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Harvesting is considered completed when the metadata records appear in the RA&amp;rsquo;s &lt;code&gt;*/iso&lt;/code&gt; WAF, and pass ISO 19139 schema validation.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: the variety of the transformation XSL style sheets used for metadata conversion to ISO 19115-2 are also available for download and local use:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SOS Get Capabilities to ISO: &lt;a href=&#34;http://www.ngdc.noaa.gov/metadata/published/xsl/SensorObservationService/SOS2ISO_MI.xsl&#34;&gt;http://www.ngdc.noaa.gov/metadata/published/xsl/SensorObservationService/SOS2ISO_MI.xsl&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;WMS Get Capabilities to ISO: &lt;a href=&#34;http://www.ngdc.noaa.gov/metadata/published/xsl/wms1.3_to_isoSV.xsl&#34;&gt;http://www.ngdc.noaa.gov/metadata/published/xsl/wms1.3_to_isoSV.xsl&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;ncISO
+
+&lt;ul&gt;
+&lt;li&gt;GitHub (Master): &lt;a href=&#34;https://github.com/Unidata/threddsIso/blob/master/src/main/resources/xsl/nciso/UnidataDD2MI.xsl&#34;&gt;https://github.com/Unidata/threddsIso/blob/master/src/main/resources/xsl/nciso/UnidataDD2MI.xsl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;NGDC copy: &lt;a href=&#34;http://www.ngdc.noaa.gov/metadata/published/xsl/nciso2.0/UnidataDD2MI.xsl&#34;&gt;http://www.ngdc.noaa.gov/metadata/published/xsl/nciso2.0/UnidataDD2MI.xsl&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;3-publishing-metadata:b50c3255fc3804594f54cd693ce053af&#34;&gt;3. Publishing Metadata&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;On day 3 (a day after the status has been changed to &amp;ldquo;approved &amp;ldquo;) by 07:15 MT/ 09:15 ET, the ISO metadata records are automatically posted to a &lt;a href=&#34;http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/&#34;&gt;&lt;strong&gt;production&lt;/strong&gt; WAFs&lt;/a&gt; in EMMA.&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page&#34;&gt;NGDC Geoportal&lt;/a&gt; automatically harvests ISO records from the  &lt;a href=&#34;http://www.ngdc.noaa.gov/metadata/published/NOAA/IOOS/&#34;&gt;&lt;strong&gt;production&lt;/strong&gt; WAFs&lt;/a&gt; by 09:00 MT/ 11:00 ET.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Service Registration process ends when a valid ISO record has been created and added to the production WAF.  The metadata should be able to be found in the &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page&#34;&gt;NGDC Geoportal&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;4-harvesting-metadata-by-the-ioos-catalog:b50c3255fc3804594f54cd693ce053af&#34;&gt;4. Harvesting Metadata by the IOOS Catalog&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://catalog.ioos.us/&#34;&gt;IOOS Catalog&lt;/a&gt; queries the  &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/catalog/main/home.page&#34;&gt;NGDC Geoportal&lt;/a&gt; daily for a list of services registered to IOOS.  These services are then individually queried by the Catalog and their metadata is harvested and indexed.&lt;/p&gt;
+
+&lt;p&gt;Briefly, the current (03 October 2014) harvest schedule for the catalog is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;harvests start nightly at 7:10am UTC (2:10am eastern)&lt;/li&gt;
+&lt;li&gt;cleanups start nightly at 8:10am UTC (3:10am eastern)&lt;/li&gt;
+&lt;li&gt;reindex daily daily at 6:30am UTC (1:30am eastern)&lt;/li&gt;
+&lt;li&gt;daily status emails at 6:20am UTC (1:20am eastern)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the Catalog &lt;a href=&#34;http://github.com/ioos/catalog&#34;&gt;documentation&lt;/a&gt; for more information on what is indexed and how.&lt;/p&gt;
+
+&lt;h1 id=&#34;registration-process-faq:b50c3255fc3804594f54cd693ce053af&#34;&gt;Registration Process FAQ&lt;/h1&gt;
+
+&lt;h2 id=&#34;how-do-i-check-to-see-if-my-metadata-has-been-registered:b50c3255fc3804594f54cd693ce053af&#34;&gt;How do I check to see if my metadata has been registered?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Review metadata and assessments of metadata in &lt;a href=&#34;http://www.ngdc.noaa.gov/docucomp/page?view=wafsInGroup&amp;amp;title=Metrics%20and%20Collections%20for%20Group%20IOOS&amp;amp;groupName=IOOS&#34;&gt;EMMA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/catalog/search/search.page&#34;&gt;Search&lt;/a&gt; or &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/catalog/search/browse/browse.page&#34;&gt;Browse&lt;/a&gt; metadata in &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal&#34;&gt;Geoportal&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Look up the relevant data in &lt;a href=&#34;http://catalog.ioos.us/&#34;&gt;IOOS Catalog&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-do-i-update-or-remove-metadata-in-the-service-registry:b50c3255fc3804594f54cd693ce053af&#34;&gt;How do I update or remove metadata in the service registry?&lt;/h2&gt;
+
+&lt;p&gt;The registry augments today&amp;rsquo;s harvest with all previous harvests and sometimes this can result in old out-of-date records that are no longer applicable.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;If the content of the service has changed, but the service should still be registered then:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create an issue in the &lt;a href=&#34;https://github.com/ioos/registry/issues&#34;&gt;github IOOS/ Registry repository&lt;/a&gt; or send an email to ioos.catalog@noaa.gov requesting a &amp;lsquo;clean out&amp;rsquo; of a particular service or WAF.&lt;/li&gt;
+&lt;li&gt;The NGDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder (WAF).&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If the service is outdated, and should no longer be registered with IOOS then:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Send an email to ioos.catalog@noaa.gov requesting that the service be removed.&lt;/li&gt;
+&lt;li&gt;The service status will be changed to &amp;lsquo;For Removal&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;The NGDC administrator will manually set a flag to remove ALL previous metadata records before harvest. This will result in an entirely new refresh of the content for that web accessible folder.&lt;/li&gt;
+&lt;li&gt;The NGDC admin will change the service status to &amp;lsquo;Removed&amp;rsquo;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;how-do-i-register-a-thredds-catalog-that-contain-catalogref-elements:b50c3255fc3804594f54cd693ce053af&#34;&gt;How do I register a THREDDS catalog that contain &lt;code&gt;catalogRef&lt;/code&gt; elements?&lt;/h2&gt;
+
+&lt;p&gt;In THREDDS catalogs it is common to use &lt;code&gt;catalogRef&lt;/code&gt; elements to reference other catalogs, especially in the &lt;a href=&#34;http://gis.stackexchange.com/questions/70919/setting-up-thredds-catalogs-for-ocean-model-data&#34;&gt;top level catalog&lt;/a&gt;.  The NGDC crawler is currently not following &lt;code&gt;catalogRef&lt;/code&gt; links, however.  So if you had a top level catalog that looked like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;catalog xmlns=&amp;quot;http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0&amp;quot;
+    xmlns:xlink=&amp;quot;http://www.w3.org/1999/xlink&amp;quot;
+    name=&amp;quot;THREDDS Top Catalog, points to other THREDDS catalogs&amp;quot; version=&amp;quot;1.0.1&amp;quot;&amp;gt;
+
+    &amp;lt;dataset name=&amp;quot;NCSU MEAS THREDDS catalogs&amp;quot;&amp;gt;
+        &amp;lt;catalogRef xlink:href=&amp;quot;gomtox_catalog.xml&amp;quot; xlink:title=&amp;quot;GOMTOX (Gulf of Maine) Ocean Model&amp;quot; name=&amp;quot;&amp;quot;/&amp;gt;
+        &amp;lt;catalogRef xlink:href=&amp;quot;sabgom_catalog.xml&amp;quot; xlink:title=&amp;quot;SABGOM (South Atlantic Bight and Gulf of Mexico) Ocean Model&amp;quot; name=&amp;quot;&amp;quot;/&amp;gt;
+    &amp;lt;/dataset&amp;gt;
+
+&amp;lt;/catalog&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and you wanted all the content to be harvested, you should not submit the top level catalog (which would harvest nothing).&lt;/p&gt;
+
+&lt;p&gt;So, if a top level URL looks something like&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ra.org/thredds/catalog/catalog.xml&#34;&gt;http://ra.org/thredds/catalog/catalog.xml&lt;/a&gt;,&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;then Instead of that top level URL, you should submit the child catalog URLs for harvesting.  An example of a child catalog URL would be like this&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ra.org/thredds/catalog/content/catalog.xml&#34;&gt;http://ra.org/thredds/catalog/content/catalog.xml&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;where-can-i-find-the-uuids-of-the-registered-metadata-collections:b50c3255fc3804594f54cd693ce053af&#34;&gt;Where can I find the UUIDs of the registered metadata collections?&lt;/h2&gt;
+
+&lt;p&gt;To search for metadata on Geoportal, you must submit the metadata collection &lt;code&gt;sys.siteuuid&lt;/code&gt; parameter for each query. The Master UUID listing for Geoportal metadata collections (e.g. RAs) is located in &lt;a href=&#34;https://github.com/ioos/registry/blob/master/uuid.csv&#34;&gt;IOOS/Registry repository&lt;/a&gt; on GitHub.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-can-i-search-for-the-registered-metadata-on-the-ngdc-geoportal:b50c3255fc3804594f54cd693ce053af&#34;&gt;How can I search for the registered metadata on the NGDC Geoportal?&lt;/h2&gt;
+
+&lt;p&gt;The metadata stored in the WAFs can be searched through via either the NGDC Geoportal&amp;rsquo;s REST API or OGC Catalog Service for Web interface. Below are selected examples of the search queries that can be issued to the NGDC Geoportal to search for IOOS Regional Association assets.&lt;br /&gt;
+Additional information on the Geoportal in general can be found on the &lt;a href=&#34;https://sourceforge.net/apps/mediawiki/geoportal/index.php?title=REST_API_Syntax&#34;&gt;ESRI Sourceforge site&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;search-via-geoportal-rest-interface:b50c3255fc3804594f54cd693ce053af&#34;&gt;Search via Geoportal REST interface&lt;/h3&gt;
+
+&lt;h4 id=&#34;date-search-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;Date Search Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS collection for records with start date 2009-02-01 to end date 2012-02-01 with JSON response:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;searchText=startDate%3A%5B1800-01-01%20TO%202012-02-01%5D%20AND%20endDate%3A%5B2009-02-01%20TO%202100-01-01%5D%20%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%7D%22&amp;amp;start=1&amp;amp;max=10&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson&#34;&gt;PacIOOS Date Search Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;searchText=startDate:[1800-01-01 TO 2012-02-01] AND endDate:[2009-02-01 TO 2100-01-01] AND sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=10&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;keyword-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;Keyword Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS WAF for keywords &lt;code&gt;sea_water_salinity&lt;/code&gt; with JSON response:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;searchText=keywords%3A%20sea_water_salinity%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%7D%22&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson&#34;&gt;PacIOOS Keyword Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;searchText=keywords: sea_water_salinity AND sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;geographic-search-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;Geographic Search Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS WAF for metadata records within -164.9246,16.6012,-149.4899,25.3959 with JSON response:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;searchText=sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%7D%22&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;spatialRel=esriSpatialRelWithin&amp;amp;bbox=-164.9246,16.6012,-149.4899,25.3959&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson&#34;&gt;PacIOOS Geo Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;searchText=sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;spatialRel=esriSpatialRelWithin&amp;amp;bbox=-164.9246,16.6012,-149.4899,25.3959&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;multi-criteria-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;Multi-Criteria Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS WAF for metadata records with all of the above with JSON response:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;rids=local&amp;amp;searchText=keywords%3A%20sea_water_salinity%20AND%20endDate%3A%5B2009-02-01%20TO%202100-01-01%5D%20AND%20startDate%3A%5B1800-01-01%20TO%202012-02-01%5D%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;spatialRel=esriSpatialRelWithin&amp;amp;bbox=-164.9246,16.6012,-149.4899,25.3959&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson&#34;&gt;PacIOOS Multi Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;rids=local&amp;amp;searchText=keywords: sea_water_salinity AND endDate:[2009-02-01 TO 2100-01-01] AND startDate:[1800-01-01 TO 2012-02-01] AND sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;spatialRel=esriSpatialRelWithin&amp;amp;bbox=-164.9246,16.6012,-149.4899,25.3959&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=pjson
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;wms-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;WMS Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS WAF for metadata records with a WMS service endpoint with GeoRSS response:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;rids=local&amp;amp;searchText=sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22%20AND%20wms.resource.url%3A*&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=georss&#34;&gt;PacIOOS WMS Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;rids=local&amp;amp;searchText=wms.resource.url:* AND sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=georss
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;wcs-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;WCS Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS WAF for metadata records with a WCS service endpoint with html response:
+&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;rids=local&amp;amp;searchText=wcs.resource.url:*%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=html&#34;&gt;PacIOOS WCS Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;rids=local&amp;amp;searchText=wcs.resource.url:* AND sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;sos-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;SOS Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS WAF for metadata records with an SOS service endpoint with html response:
+&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;rids=local&amp;amp;searchText=sos.resource.url:*%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=html&#34;&gt;PacIOOS SOS Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;rids=local&amp;amp;searchText=sos.resource.url:* AND sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;opendap-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;OPeNDAP Example&lt;/h4&gt;
+
+&lt;p&gt;Search within the PacIOOS WAF for metadata records with a OpenDAP service endpoint with html response:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;rids=local&amp;amp;searchText=odp.resource.url:*%20AND%20sys.siteuuid%3A%22%68FF11D8-D66B-45EE-B33A-21919BB26421%22&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=html&#34;&gt;PacIOOS OPeNDAP Example Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decoded Parameters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rid=local&amp;amp;ridName=NOAA&#39;s Geophysical Data Center&amp;amp;rids=local&amp;amp;searchText=odp.resource.url:* AND sys.siteuuid:&amp;quot;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;quot;&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;search-via-csw-interface:b50c3255fc3804594f54cd693ce053af&#34;&gt;Search via CSW interface&lt;/h3&gt;
+
+&lt;p&gt;The CSW queries must be issued to the &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/csw&#34;&gt;NGDC CSW Service Endpoint&lt;/a&gt; as XML POST requests.&lt;/p&gt;
+
+&lt;h4 id=&#34;iso-date-modified-search:b50c3255fc3804594f54cd693ce053af&#34;&gt;ISO Date Modified Search&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;csw:GetRecords xmlns:csw=&amp;quot;http://www.opengis.net/cat/csw/2.0.2&amp;quot; version=&amp;quot;2.0.2&amp;quot; service=&amp;quot;CSW&amp;quot; resultType=&amp;quot;results&amp;quot; startPosition=&amp;quot;1&amp;quot; maxRecords=&amp;quot;11&amp;quot; outputSchema=&amp;quot;http://www.isotc211.org/2005/gmd&amp;quot;&amp;gt; &amp;lt;csw:Query typeNames=&amp;quot;csw:Record&amp;quot; xmlns:ogc=&amp;quot;http://www.opengis.net/ogc&amp;quot; xmlns:gml=&amp;quot;http://www.opengis.net/gml&amp;quot; &amp;gt; 
+&amp;lt;csw:ElementSetName&amp;gt;full&amp;lt;/csw:ElementSetName&amp;gt; 
+&amp;lt;csw:Constraint version=&amp;quot;1.1.0&amp;quot;&amp;gt; 
+  &amp;lt;ogc:Filter&amp;gt;
+    &amp;lt;ogc:And&amp;gt;
+      &amp;lt;ogc:PropertyIsGreaterThan&amp;gt; 
+      &amp;lt;ogc:PropertyName&amp;gt;apiso:modified&amp;lt;/ogc:PropertyName&amp;gt; &amp;lt;ogc:Literal&amp;gt;2011-09-30&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsGreaterThan&amp;gt; 
+      &amp;lt;ogc:PropertyIsLessThan&amp;gt; 
+      &amp;lt;ogc:PropertyName&amp;gt;apiso:modified&amp;lt;/ogc:PropertyName&amp;gt; &amp;lt;ogc:Literal&amp;gt;2011-10-02&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsLessThan&amp;gt; 
+    &amp;lt;/ogc:And&amp;gt;
+  &amp;lt;/ogc:Filter&amp;gt;
+&amp;lt;/csw:Constraint&amp;gt; 
+&amp;lt;/csw:Query&amp;gt; 
+&amp;lt;/csw:GetRecords&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;wms-search-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;WMS Search Example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;   
+&amp;lt;csw:GetRecords xmlns:csw=&amp;quot;http://www.opengis.net/cat/csw/2.0.2&amp;quot; version=&amp;quot;2.0.2&amp;quot; service=&amp;quot;CSW&amp;quot; resultType=&amp;quot;results&amp;quot; 
+outputSchema=&amp;quot;http://www.isotc211.org/2005/gmd&amp;quot; startPosition=&amp;quot;1&amp;quot; maxRecords=&amp;quot;1000&amp;quot;&amp;gt;
+  &amp;lt;csw:Query typeNames=&amp;quot;csw:Record&amp;quot; xmlns:ogc=&amp;quot;http://www.opengis.net/ogc&amp;quot; xmlns:gml=&amp;quot;http://www.opengis.net/gml&amp;quot;&amp;gt;
+  &amp;lt;csw:ElementSetName&amp;gt;full&amp;lt;/csw:ElementSetName&amp;gt; 
+  &amp;lt;csw:Constraint version=&amp;quot;1.1.0&amp;quot;&amp;gt;
+  &amp;lt;ogc:Filter&amp;gt;
+    &amp;lt;ogc:And&amp;gt;
+      &amp;lt;ogc:PropertyIsEqualTo&amp;gt;
+        &amp;lt;ogc:PropertyName&amp;gt;sys.siteuuid&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsEqualTo&amp;gt;
+      &amp;lt;ogc:PropertyIsLike wildCard=&amp;quot;*&amp;quot; escape=&amp;quot;\&amp;quot; singleChar=&amp;quot;?&amp;quot;&amp;gt; 
+        &amp;lt;ogc:PropertyName&amp;gt;apiso:ServiceType&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;*wms*&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsLike&amp;gt;
+    &amp;lt;/ogc:And&amp;gt; 
+  &amp;lt;/ogc:Filter&amp;gt; 
+&amp;lt;/csw:Constraint&amp;gt; 
+&amp;lt;/csw:Query&amp;gt;
+&amp;lt;/csw:GetRecords&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;wcs-search-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;WCS Search Example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;   
+&amp;lt;csw:GetRecords xmlns:csw=&amp;quot;http://www.opengis.net/cat/csw/2.0.2&amp;quot; version=&amp;quot;2.0.2&amp;quot; service=&amp;quot;CSW&amp;quot; resultType=&amp;quot;results&amp;quot; 
+outputSchema=&amp;quot;http://www.isotc211.org/2005/gmd&amp;quot; startPosition=&amp;quot;1&amp;quot; maxRecords=&amp;quot;1000&amp;quot;&amp;gt;
+  &amp;lt;csw:Query typeNames=&amp;quot;csw:Record&amp;quot; xmlns:ogc=&amp;quot;http://www.opengis.net/ogc&amp;quot; xmlns:gml=&amp;quot;http://www.opengis.net/gml&amp;quot;&amp;gt;
+  &amp;lt;csw:ElementSetName&amp;gt;full&amp;lt;/csw:ElementSetName&amp;gt; 
+  &amp;lt;csw:Constraint version=&amp;quot;1.1.0&amp;quot;&amp;gt;
+  &amp;lt;ogc:Filter&amp;gt;
+    &amp;lt;ogc:And&amp;gt;
+      &amp;lt;ogc:PropertyIsEqualTo&amp;gt;
+        &amp;lt;ogc:PropertyName&amp;gt;sys.siteuuid&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsEqualTo&amp;gt;
+      &amp;lt;ogc:PropertyIsLike wildCard=&amp;quot;*&amp;quot; escape=&amp;quot;\&amp;quot; singleChar=&amp;quot;?&amp;quot;&amp;gt; 
+        &amp;lt;ogc:PropertyName&amp;gt;apiso:ServiceType&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;*wcs*&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsLike&amp;gt;
+    &amp;lt;/ogc:And&amp;gt; 
+  &amp;lt;/ogc:Filter&amp;gt; 
+&amp;lt;/csw:Constraint&amp;gt; 
+&amp;lt;/csw:Query&amp;gt;
+&amp;lt;/csw:GetRecords&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;opendap-search-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;OPeNDAP Search Example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;   
+&amp;lt;csw:GetRecords xmlns:csw=&amp;quot;http://www.opengis.net/cat/csw/2.0.2&amp;quot; version=&amp;quot;2.0.2&amp;quot; service=&amp;quot;CSW&amp;quot; resultType=&amp;quot;results&amp;quot;
+outputSchema=&amp;quot;http://www.isotc211.org/2005/gmd&amp;quot; startPosition=&amp;quot;1&amp;quot; maxRecords=&amp;quot;1000&amp;quot;&amp;gt;
+  &amp;lt;csw:Query typeNames=&amp;quot;csw:Record&amp;quot; xmlns:ogc=&amp;quot;http://www.opengis.net/ogc&amp;quot; xmlns:gml=&amp;quot;http://www.opengis.net/gml&amp;quot;&amp;gt;
+  &amp;lt;csw:ElementSetName&amp;gt;full&amp;lt;/csw:ElementSetName&amp;gt; 
+  &amp;lt;csw:Constraint version=&amp;quot;1.1.0&amp;quot;&amp;gt;
+  &amp;lt;ogc:Filter&amp;gt;
+    &amp;lt;ogc:And&amp;gt;
+      &amp;lt;ogc:PropertyIsEqualTo&amp;gt;
+        &amp;lt;ogc:PropertyName&amp;gt;sys.siteuuid&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsEqualTo&amp;gt;
+      &amp;lt;ogc:PropertyIsLike wildCard=&amp;quot;*&amp;quot; escape=&amp;quot;\&amp;quot; singleChar=&amp;quot;?&amp;quot;&amp;gt; 
+        &amp;lt;ogc:PropertyName&amp;gt;apiso:ServiceType&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;*opendap*&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsLike&amp;gt;
+    &amp;lt;/ogc:And&amp;gt; 
+  &amp;lt;/ogc:Filter&amp;gt; 
+&amp;lt;/csw:Constraint&amp;gt; 
+&amp;lt;/csw:Query&amp;gt;
+&amp;lt;/csw:GetRecords&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;sos-search-example:b50c3255fc3804594f54cd693ce053af&#34;&gt;SOS Search Example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;   
+&amp;lt;csw:GetRecords xmlns:csw=&amp;quot;http://www.opengis.net/cat/csw/2.0.2&amp;quot; version=&amp;quot;2.0.2&amp;quot; service=&amp;quot;CSW&amp;quot; resultType=&amp;quot;results&amp;quot;
+outputSchema=&amp;quot;http://www.isotc211.org/2005/gmd&amp;quot; startPosition=&amp;quot;1&amp;quot; maxRecords=&amp;quot;1000&amp;quot;&amp;gt;
+  &amp;lt;csw:Query typeNames=&amp;quot;csw:Record&amp;quot; xmlns:ogc=&amp;quot;http://www.opengis.net/ogc&amp;quot; xmlns:gml=&amp;quot;http://www.opengis.net/gml&amp;quot;&amp;gt;
+  &amp;lt;csw:ElementSetName&amp;gt;full&amp;lt;/csw:ElementSetName&amp;gt; 
+  &amp;lt;csw:Constraint version=&amp;quot;1.1.0&amp;quot;&amp;gt;
+  &amp;lt;ogc:Filter&amp;gt;
+    &amp;lt;ogc:And&amp;gt;
+      &amp;lt;ogc:PropertyIsEqualTo&amp;gt;
+        &amp;lt;ogc:PropertyName&amp;gt;sys.siteuuid&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;{68FF11D8-D66B-45EE-B33A-21919BB26421}&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsEqualTo&amp;gt;
+      &amp;lt;ogc:PropertyIsLike wildCard=&amp;quot;*&amp;quot; escape=&amp;quot;\&amp;quot; singleChar=&amp;quot;?&amp;quot;&amp;gt; 
+        &amp;lt;ogc:PropertyName&amp;gt;apiso:ServiceType&amp;lt;/ogc:PropertyName&amp;gt;
+        &amp;lt;ogc:Literal&amp;gt;*sos*&amp;lt;/ogc:Literal&amp;gt;
+      &amp;lt;/ogc:PropertyIsLike&amp;gt;
+    &amp;lt;/ogc:And&amp;gt; 
+  &amp;lt;/ogc:Filter&amp;gt; 
+&amp;lt;/csw:Constraint&amp;gt; 
+&amp;lt;/csw:Query&amp;gt;
+&amp;lt;/csw:GetRecords&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
