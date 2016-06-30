@@ -28,7 +28,7 @@ The [IOOS Service Registration Webinar](https://mmancusa.webex.com/mmancusa/ldr.
 
 # Steps for registering IOOS Service Metadata
 
-The resources that currently can be registered with the Registry are ([**Figure 1**](#Fig_1)): 
+The following resources can be registered with the Registry ([**Figure 1**](#Fig_1)): 
 
    * _**SOS**_ and _**WMS**_ --  by means of a single getCapabilities request, e.g.
      *  http://sos.aoos.org/sos/service?service=SOS&request=GetCapabilities&AcceptVersions=1.0.0)
@@ -43,8 +43,8 @@ The resources that currently can be registered with the Registry are ([**Figure 
    > **NOTE**: WAFs offer the most control over the metadata that will appear in the registry, but require some efforts to create and maintain.
 
 <br> 
-<a name="Fig_1"></a>![Registration process](/images/IOOS_Harvest_Process_web.png) 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Figure 1: IOOS service metadata registration steps**
+<a name="Fig_1"></a>![Registration process](/images/catalog_proposed_architecture_luke_web.png) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Figure 1: Proposed IOOS Registry and Catalog Architecture**
 
 
  
