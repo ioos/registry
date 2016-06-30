@@ -54,7 +54,7 @@
 
 &lt;h1 id=&#34;steps-for-registering-ioos-service-metadata:b50c3255fc3804594f54cd693ce053af&#34;&gt;Steps for registering IOOS Service Metadata&lt;/h1&gt;
 
-&lt;p&gt;The resources that currently can be registered with the Registry are (&lt;a href=&#34;#Fig_1&#34;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;The following resources can be registered with the Registry (&lt;a href=&#34;#Fig_1&#34;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;&lt;/a&gt;):&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;SOS&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;WMS&lt;/strong&gt;&lt;/em&gt; &amp;ndash;  by means of a single getCapabilities request, e.g.
@@ -80,9 +80,8 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br&gt;
-&lt;a name=&#34;Fig_1&#34;&gt;&lt;/a&gt;&lt;img src=&#34;http://ioos.github.io/registry/images/IOOS_Harvest_Process_web.png&#34; alt=&#34;Registration process&#34; /&gt;
-
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;strong&gt;Figure 1: IOOS service metadata registration steps&lt;/strong&gt;&lt;/p&gt;
+&lt;a name=&#34;Fig_1&#34;&gt;&lt;/a&gt;&lt;img src=&#34;http://ioos.github.io/registry/images/catalog_proposed_architecture_luke_web.png&#34; alt=&#34;Registration process&#34; /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;strong&gt;Figure 1: Proposed IOOS Registry and Catalog Architecture&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;1-submitting-url-of-a-service-or-waf-to-the-collection-source-table:b50c3255fc3804594f54cd693ce053af&#34;&gt;1. Submitting URL of a Service or WAF to the Collection Source Table&lt;/h2&gt;
 
